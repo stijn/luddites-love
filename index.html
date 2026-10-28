@@ -1,0 +1,1289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marginalia from Strangers</title>
+<meta name="description" content="Six and a half years of Google reviews of Luddites Books &amp; Wine, sorted, counted and bound in green and brass. A special edition, just for Jorien.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#16432E">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Marginalia from Strangers">
+<meta property="og:description" content="Your hideout, as told by strangers. A special edition, just for Jorien.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Luddites green, sampled from the logo: rgb(22,67,46) */
+  --green:#16432E; --green-2:#22583F; --green-3:#2F6B4F; --green-soft:#E1EAE3;
+  --cream:#F4EEDF; --brass-on-green:#D2B373;
+  --paper:#F8F4EA; --paper-2:#EEE7D7; --card:#FFFCF5;
+  --ink:#1E2420; --ink-2:#48504A; --ink-3:#727870;
+  --accent:#16432E; --brass:#8A6A2E; --rule:#DED5C2;
+  --bar:#16432E; --bar-soft:#C8D8CD; --track:#EEE7D7;
+  --cloth:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(0,0,0,.06) 0 1px,transparent 1px 3px);
+  --shadow:0 1px 0 rgba(22,67,46,.05),0 10px 26px -14px rgba(22,67,46,.28);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0B1A12; --paper-2:#11251A; --card:#132A1E;
+    --ink:#F2ECDD; --ink-2:#CDC6B4; --ink-3:#979282;
+    --accent:#E2C98F; --brass:#D9BC7E; --rule:#24402F;
+    --bar:#C9A865; --bar-soft:#5B4D2C; --track:#1B3326;
+    --green-soft:#1D3A2B; --shadow:0 10px 26px -14px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0B1A12; --paper-2:#11251A; --card:#132A1E;
+  --ink:#F2ECDD; --ink-2:#CDC6B4; --ink-3:#979282;
+  --accent:#E2C98F; --brass:#D9BC7E; --rule:#24402F;
+  --bar:#C9A865; --bar-soft:#5B4D2C; --track:#1B3326;
+  --green-soft:#1D3A2B; --shadow:0 10px 26px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 "DM Sans",system-ui,sans-serif;overflow-x:hidden}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+@media(min-width:720px){.wrap{padding:0 32px}}
+.al{font-family:Alegreya,Georgia,serif}
+
+/* book-cloth green, like the special-edition hardbacks */
+.plate{background-color:var(--green);color:var(--cream);
+  background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(0,0,0,.06) 0 1px,transparent 1px 3px)}
+/* brass foil lettering */
+.foil{background:linear-gradient(105deg,#9A7434 0%,#E6CD8F 26%,#B8914F 46%,#F1DFAB 62%,#A27A3A 84%,#D4B676 100%);background-size:220% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:sheen 10s ease-in-out infinite alternate}
+@keyframes sheen{to{background-position:100% 0}}
+/* the bookmark border (set from JS as an SVG border-image) */
+.frame{border:22px solid #C9A865;border-image:var(--frame-g) 20 round}
+.frame-c{border:20px solid #A88543;border-image:var(--frame-c) 20 round}
+.foil-rule{height:20px;max-width:100%;margin-left:auto;margin-right:auto;background-image:var(--rule-g);background-repeat:repeat-x;background-position:left center;background-size:40px 20px;opacity:.9}
+.foil-rule.c{background-image:var(--rule-c);opacity:.75}
+
+/* band + nav */
+.band{text-align:center;font:400 13px/1 Merriweather,serif;padding:11px 16px}
+.band b{font-weight:400;border:1px solid var(--brass-on-green);color:var(--brass-on-green);border-radius:6px;padding:4px 10px;margin-left:8px;display:inline-block}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--rule)}
+.brand{display:flex;align-items:center;gap:12px;color:var(--accent);text-decoration:none}
+.brand svg{width:38px;height:38px}
+.brand .wm{font:400 16px/1.1 Alegreya,serif}
+.brand .wm i{display:block;font-size:15px}
+.nav-r{display:flex;gap:20px;align-items:center;font:400 13px Merriweather,serif;text-transform:uppercase;letter-spacing:.02em}
+.nav-r a{color:var(--accent);text-decoration:none;display:none}
+.nav-r a:hover{text-decoration:underline;text-underline-offset:4px}
+@media(min-width:860px){.nav-r a{display:inline}}
+.theme{background:none;border:1px solid var(--rule);color:var(--accent);border-radius:999px;width:36px;height:36px;cursor:pointer;font-size:15px}
+
+/* hero, a book cover */
+.hero{padding:40px 0 56px}
+.cover{max-width:980px;margin:0 auto;text-align:center;padding:52px 22px 48px;box-shadow:0 30px 60px -30px rgba(0,0,0,.55)}
+@media(min-width:720px){.cover{padding:64px 56px 58px}}
+.cover .logo{width:120px;margin:0 auto 26px}
+.kicker{font:500 11.5px/1.5 "DM Sans";letter-spacing:.24em;text-transform:uppercase;color:var(--brass-on-green)}
+.cover h1{font:italic 400 clamp(44px,8vw,100px)/1.02 Alegreya,serif;margin:18px auto 22px;max-width:12ch;letter-spacing:-.005em}
+.cover .lede{font:300 clamp(16px,2vw,19px)/1.7 Merriweather,serif;color:var(--cream);opacity:.92;max-width:600px;margin:0 auto}
+.ded{margin:30px auto 0;display:inline-flex;align-items:center;gap:12px;font:italic 400 19px Alegreya,serif;color:var(--brass-on-green)}
+.ded:before,.ded:after{content:"";width:40px;height:1px;background:currentColor;opacity:.6}
+
+/* sections */
+section{padding:60px 0}
+.sec-h{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:8px 24px;margin-bottom:30px}
+.sec-h h2{font:400 clamp(26px,3.6vw,40px)/1.15 Merriweather,serif;color:var(--accent);margin:0;text-transform:uppercase;letter-spacing:.01em}
+.plate .sec-h h2{color:var(--cream)}
+.sec-h p{margin:0;color:var(--ink-3);font-size:14px;max-width:46ch}
+.plate .sec-h p{color:var(--cream);opacity:.75}
+.no{font:italic 400 19px Alegreya,serif;color:var(--brass);display:block;margin-bottom:4px;text-transform:none;letter-spacing:0}
+.plate .no{color:var(--brass-on-green)}
+.divider{padding:6px 0}
+
+/* stat tiles */
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:720px){.tiles{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1000px){.tiles{grid-template-columns:repeat(6,1fr)}}
+.tile{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:20px 18px;box-shadow:var(--shadow)}
+.tile .v{font:300 clamp(32px,4vw,44px)/1 Merriweather,serif;color:var(--accent)}
+.tile .v small{font-size:.45em;color:var(--ink-3)}
+.tile .l{font-size:13px;color:var(--ink-2);margin-top:10px;line-height:1.4}
+.tile.hero-t{grid-column:span 2;border:0;background-color:var(--green)}
+.tile.hero-t .v{font:400 clamp(60px,8vw,84px)/1 Alegreya,serif}
+.tile.hero-t .l{color:var(--cream);opacity:.85}
+.stars{color:var(--brass-on-green);letter-spacing:3px;font-size:18px}
+
+/* grids + cards */
+.g2{display:grid;gap:22px}
+@media(min-width:900px){.g2{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:24px;box-shadow:var(--shadow);min-width:0}
+.card h3{font:700 17px/1.3 Merriweather,serif;margin:0 0 4px;color:var(--ink)}
+.card .sub{font-size:13px;color:var(--ink-3);margin:0 0 18px}
+
+/* horizontal bars */
+.hb{display:grid;grid-template-columns:auto 1fr auto;gap:9px 12px;align-items:center}
+.hb .k{font-size:14px;color:var(--ink-2);white-space:nowrap}
+.hb .t{height:14px;background:var(--track);border-radius:4px;position:relative;overflow:hidden}
+.hb .f{position:absolute;inset:0 auto 0 0;background-color:var(--bar);background-image:var(--cloth);border-radius:0 4px 4px 0;width:0;transition:width 1.1s cubic-bezier(.2,.7,.2,1),background .15s}
+.hb .n{font:500 13px "DM Sans";color:var(--ink);text-align:right;min-width:3ch;font-variant-numeric:tabular-nums}
+.hb .row{display:contents;cursor:default}
+.hb .row:hover .f{background-color:#B8914F}
+.hb .row:hover .k{color:var(--ink)}
+.starkey{color:#B8914F;letter-spacing:1px}
+
+/* column chart */
+.cols{display:flex;align-items:flex-end;gap:10px;height:220px;padding-top:24px;border-bottom:1px solid var(--rule)}
+.col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;position:relative;cursor:default}
+.col .b{width:100%;max-width:56px;background-color:var(--bar);background-image:var(--cloth);border-radius:4px 4px 0 0;height:0;transition:height 1.1s cubic-bezier(.2,.7,.2,1),background .15s}
+.col.partial .b{background:repeating-linear-gradient(135deg,var(--bar) 0 6px,var(--bar-soft) 6px 9px)}
+.col .lab{position:absolute;font:500 12px "DM Sans";color:var(--ink-2);transform:translateY(-6px)}
+.col:hover .b{background-color:#B8914F}
+.xl{display:flex;gap:10px;margin-top:8px}
+.xl span{flex:1;text-align:center;font-size:12px;color:var(--ink-3)}
+.note{font-size:12.5px;color:var(--ink-3);margin-top:14px;line-height:1.5}
+
+#tip{position:fixed;pointer-events:none;background:#0F2A1D;color:#F4EEDF;font:13px/1.4 "DM Sans";padding:8px 11px;border-radius:8px;border:1px solid #B8914F;opacity:0;transform:translateY(4px);transition:opacity .12s,transform .12s;z-index:50;max-width:240px}
+#tip.on{opacity:1;transform:none}
+
+/* lexicon */
+.cloud{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;justify-content:center;padding:6px 0}
+.cloud span{font-family:Alegreya,serif;color:var(--accent);line-height:1.1;cursor:default;transition:color .15s}
+.cloud span:nth-child(3n){font-style:italic}
+.cloud span:nth-child(4n+1){color:var(--brass)}
+.cloud span:hover{color:#B8914F}
+
+/* the house */
+.house-wrap{display:grid;gap:30px;align-items:center}
+@media(min-width:900px){.house-wrap{grid-template-columns:minmax(0,430px) 1fr;align-items:start}.house-wrap>div:first-child{position:sticky;top:64px}}
+.drawing{position:relative;z-index:2;max-width:430px;margin:0 auto;width:100%}
+.drawing img,.drawing canvas{width:100%;height:auto;display:block}
+.drawing .raw{mix-blend-mode:multiply}
+.spot{position:absolute;left:4%;width:83%;border:1.5px dashed transparent;border-radius:6px;cursor:pointer;transition:background .2s,border-color .2s;background:transparent}
+.spot:hover,.spot.on{border-color:#B8914F;background:rgba(184,145,79,.10)}
+.spot span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--green);color:var(--cream);font:italic 400 14px Alegreya,serif;padding:3px 10px;border-radius:999px;white-space:nowrap;opacity:0;transition:opacity .2s;pointer-events:none;border:1px solid #B8914F}
+.spot:hover span,.spot.on span{opacity:1}
+.floors{display:grid;gap:14px}
+.floor{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:20px 22px;transition:border-color .2s,transform .2s;cursor:pointer}
+.floor.on{border-color:#B8914F;transform:translateX(4px)}
+.floor h3{margin:0;font:400 22px Alegreya,serif;color:var(--accent)}
+.floor .lvl{font:500 11px "DM Sans";letter-spacing:.18em;text-transform:uppercase;color:var(--brass)}
+.floor p{margin:8px 0 0;color:var(--ink-2);font-size:15px}
+.floor q{font-family:Alegreya,serif;font-style:italic;font-size:16.5px;color:var(--ink)}
+.floor .m{font-size:13px;color:var(--ink-3);margin-top:8px}
+.flat{position:relative;cursor:default;background:linear-gradient(180deg,rgba(184,145,79,.08),transparent 140px),var(--card)}
+.flat-x{position:absolute;top:10px;right:12px;width:30px;height:30px;border-radius:50%;border:1px solid var(--rule);background:transparent;color:var(--ink-3);font:400 20px/1 "DM Sans";cursor:pointer;transition:color .15s,border-color .15s}
+.flat-x:hover{color:var(--accent);border-color:#B8914F}
+.lamp{position:absolute;left:66%;top:14.6%;width:11.5%;height:12%;border-radius:40%;pointer-events:none;background:radial-gradient(closest-side,rgba(236,186,96,.55),rgba(236,186,96,.18) 60%,transparent);animation:lamp 5.5s ease-in-out infinite;transition:opacity .4s}
+.lamp.off{animation:none;opacity:0}
+@keyframes lamp{0%,100%{opacity:.25}45%{opacity:.85}60%{opacity:.6}}
+.residents{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.residents figure{margin:0;background:#FBF6EA;border-radius:10px;padding:10px 8px 10px;text-align:center;box-shadow:inset 0 0 0 1px rgba(22,67,46,.08)}
+.residents svg{width:100%;height:auto;display:block}
+@media(max-width:480px){.residents{grid-template-columns:minmax(0,1fr);gap:10px}.residents figure{padding:12px 18px 12px}}
+.residents figcaption{font:italic 400 17px/1.2 Alegreya,serif;color:#16432E;margin-top:4px}
+.residents figcaption span{display:block;font:normal 11.5px/1.4 "DM Sans";color:#727870;margin-top:2px}
+.credit{font-size:12px;color:var(--ink-3);text-align:center;margin-top:8px;font-style:italic}
+
+/* quote wall */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{border:1px solid var(--accent);color:var(--accent);background:transparent;border-radius:8px;padding:7px 13px;font:400 13px Merriweather,serif;cursor:pointer;transition:background .15s,color .15s}
+.chip:hover{background:var(--green-soft)}
+.chip.on{background:var(--green);border-color:var(--green);color:var(--cream)}
+.wall{columns:1;column-gap:18px}
+@media(min-width:680px){.wall{columns:2}}
+@media(min-width:1020px){.wall{columns:3}}
+.q{break-inside:avoid;background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:20px 20px 16px;margin:0 0 18px;box-shadow:var(--shadow);position:relative;animation:fade .45s ease both}
+.q:before{content:"\201C";position:absolute;top:-4px;left:14px;font:400 56px/1 Alegreya,serif;color:#B8914F}
+.q p{font:300 15.5px/1.65 Merriweather,serif;margin:12px 0 12px;color:var(--ink)}
+.q .by{font-size:12.5px;color:var(--ink-3);display:flex;justify-content:space-between;gap:8px}
+.q .by .s{color:#B8914F;letter-spacing:1px}
+.q.big{border:0;background-color:var(--green);background-image:var(--cloth)}
+.q.big p{font:italic 400 22px/1.4 Alegreya,serif;color:var(--cream)}
+.q.big .by{color:var(--cream);opacity:.75}
+.q.big .by .s{color:var(--brass-on-green);opacity:1}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* lucky dip: an anniversary bookmark */
+.dip{display:grid;gap:34px;align-items:center;justify-items:center}
+@media(min-width:860px){.dip{grid-template-columns:1fr auto;justify-items:start}}
+.dip h2{font:italic 400 clamp(34px,5vw,54px)/1.05 Alegreya,serif;margin:0 0 12px}
+.dip p{opacity:.85;margin:0 0 22px;font-size:15.5px;max-width:42ch}
+.btn{background:transparent;color:var(--brass-on-green);border:1px solid var(--brass-on-green);border-radius:8px;padding:12px 20px;font:400 15px Merriweather,serif;cursor:pointer;transition:background .15s,color .15s}
+.btn:hover{background:var(--brass-on-green);color:var(--green)}
+.bookmark{width:min(320px,86vw);min-height:520px;background-color:var(--green);color:#E6CD8F;display:flex;flex-direction:column;justify-content:space-between;align-items:center;text-align:center;padding:34px 18px 26px;font-family:Alegreya,serif;box-shadow:0 30px 50px -22px rgba(0,0,0,.7);transform:rotate(2deg);position:relative;will-change:transform;backface-visibility:hidden;
+  background-image:radial-gradient(ellipse at 30% 20%,rgba(255,255,255,.06),transparent 60%),var(--cloth)}
+.bookmark .ch{font-size:30px}
+.bm-gloss{position:absolute;inset:-20px;overflow:hidden;pointer-events:none}
+.bm-gloss i{position:absolute;top:-10%;bottom:-10%;left:0;width:55%;opacity:0;mix-blend-mode:screen;
+  background:linear-gradient(90deg,transparent,rgba(241,223,171,.16) 40%,rgba(255,240,205,.28) 50%,rgba(241,223,171,.16) 60%,transparent)}
+.bookmark .tx{font-size:19px;line-height:1.45;margin:22px 4px;color:#EADBB0}
+.bookmark .by{font-size:14px;font-style:italic;color:#CDB27A}
+.bookmark .sig{font-size:15px;line-height:1.2;margin-top:18px;color:#D9BF85}
+.bookmark .sig i{display:block}
+
+/* the Luddites editions */
+.eds{display:grid;gap:26px}
+@media(min-width:880px){.eds{grid-template-columns:1fr 1fr}}
+.ed{background:var(--card);border:1px solid var(--rule);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.ed .ph{position:relative;aspect-ratio:4/3.4;overflow:hidden;background:#d9d4cb}
+.ed .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.ed:hover .ph img{transform:scale(1.03)}
+.ed .bd{padding:22px 24px 24px}
+.ed h3{margin:0;font:400 26px/1.15 Alegreya,serif;color:var(--accent)}
+.ed .au{font:italic 400 16px Alegreya,serif;color:var(--brass);margin:2px 0 12px}
+.ed p{margin:0 0 10px;color:var(--ink-2);font-size:15px}
+.tag{display:inline-block;font:500 11px "DM Sans";letter-spacing:.16em;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:1px solid var(--accent);color:var(--accent)}
+.stamp{position:absolute;top:22px;right:-38px;transform:rotate(35deg);background:var(--green);color:var(--brass-on-green);border-top:1px solid #C9A865;border-bottom:1px solid #C9A865;font:500 12px "DM Sans";letter-spacing:.22em;text-transform:uppercase;padding:7px 46px}
+.heart{font:italic 400 17px Alegreya,serif;color:var(--brass);border-top:1px dashed var(--rule);padding-top:12px;margin-top:6px}
+.edq{display:grid;gap:14px;margin-top:24px}
+@media(min-width:880px){.edq{grid-template-columns:repeat(3,1fr)}}
+.edq blockquote{margin:0;padding:14px 18px;border-left:2px solid #B8914F;font:italic 400 17px/1.45 Alegreya,serif;color:var(--ink)}
+.edq cite{display:block;font:normal 12.5px "DM Sans";color:var(--ink-3);margin-top:6px}
+
+/* menu as a wine list */
+.menu{display:grid}
+.menu .it{display:grid;grid-template-columns:auto 1fr auto;gap:2px 10px;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(210,179,115,.22)}
+.menu .it:last-child{border-bottom:0}
+.menu .nm{font:400 21px/1.25 Alegreya,serif;color:var(--cream)}
+.menu .dots{border-bottom:1px dotted rgba(210,179,115,.55);transform:translateY(-5px)}
+.menu .pr{font:italic 400 16px Alegreya,serif;color:var(--brass-on-green);white-space:nowrap}
+.menu .ds{grid-column:1/-1;font-size:14px;color:var(--cream);opacity:.78}
+.menu-box{border:1px solid rgba(210,179,115,.4);border-radius:4px;padding:10px 26px;position:relative}
+.vig{display:block;width:100%;max-width:400px;height:auto;margin:12px auto 0}
+.menu-box:before{content:"";position:absolute;inset:6px;border:1px solid rgba(210,179,115,.2);border-radius:2px;pointer-events:none}
+
+/* marginalia */
+.margin{display:grid;gap:16px}
+@media(min-width:760px){.margin{grid-template-columns:repeat(2,1fr)}}
+.mn{border-left:3px solid #B8914F;background:var(--card);border-radius:0 14px 14px 0;padding:16px 20px;border-top:1px solid var(--rule);border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.mn h4{margin:0 0 4px;font:700 15px Merriweather,serif;color:var(--ink)}
+.mn h4 small{font:500 12px "DM Sans";color:var(--brass);margin-left:6px}
+.mn p{margin:0;font-size:14px;color:var(--ink-2)}
+.mn .idea{margin-top:8px;font:italic 400 16px Alegreya,serif;color:var(--accent)}
+
+/* social */
+.soc{display:grid;gap:18px}
+@media(min-width:820px){.soc{grid-template-columns:repeat(3,1fr)}}
+.soc .card .v{font:400 46px/1 Alegreya,serif;color:var(--accent);margin:6px 0}
+.soc .card p{font-size:14px;color:var(--ink-2);margin:6px 0 0}
+
+/* timeline */
+.tl{position:relative;display:grid;gap:24px;padding-left:28px}
+.tl:before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:linear-gradient(var(--rule),#B8914F,var(--rule))}
+.tl .e{position:relative}
+.tl .e:before{content:"";position:absolute;left:-26px;top:6px;width:12px;height:12px;transform:rotate(45deg);background:var(--paper);border:1.5px solid #B8914F}
+.tl .d{font:italic 400 16px Alegreya,serif;color:var(--brass)}
+.tl h4{margin:2px 0 2px;font:400 18px Merriweather,serif;color:var(--accent)}
+.tl p{margin:0;font-size:14.5px;color:var(--ink-2);max-width:62ch}
+.tl blockquote.nl{margin:8px 0 6px;padding-left:14px;border-left:2px solid #B8914F;font:italic 400 19px/1.5 Alegreya,serif;color:var(--ink);max-width:58ch}
+.lulu{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline dotted #B8914F;text-underline-offset:4px;text-decoration-thickness:1px}
+.lulu:hover,.lulu[aria-expanded="true"]{color:#A88543}
+.clubhouse{position:relative;margin:12px 0 4px;padding:14px 18px 14px 20px;max-width:52ch;transform:rotate(-.6deg);border-left:2px dashed #B8914F;background:linear-gradient(90deg,rgba(184,145,79,.10),transparent 80%);border-radius:0 8px 8px 0}
+.clubhouse p{margin:0;font:italic 400 18px/1.45 Alegreya,serif;color:var(--ink);max-width:none}
+.clubhouse em{font-style:normal;color:var(--accent)}
+.clubhouse .said{margin-top:8px;font-size:16px;color:var(--ink-2)}
+.clubhouse .said span{color:#B8914F;margin:0 4px}
+.clubhouse .who{margin-top:6px;font:500 11px "DM Sans";letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
+.clubhouse .psst{position:absolute;top:-11px;left:12px;background:var(--paper);padding:0 6px;font:italic 400 14px Alegreya,serif;color:var(--brass)}
+.tl blockquote.nl cite{display:block;margin-top:6px;font:normal 12.5px "DM Sans";color:var(--ink-3)}
+.anniv{display:grid;gap:22px;align-items:center;margin-top:14px}
+@media(min-width:760px){.anniv{grid-template-columns:auto 1fr}}
+.bms{display:flex;gap:14px;justify-content:center}
+.bms img{width:118px;height:auto;border-radius:3px;box-shadow:0 18px 30px -16px rgba(0,0,0,.6);transition:transform .4s}
+.bms img:first-child{transform:rotate(-3deg)}
+.bms img:last-child{transform:rotate(3deg) translateY(10px)}
+.bms img:hover{transform:rotate(0) scale(1.04)}
+.anniv blockquote{margin:0;font:italic 400 20px/1.5 Alegreya,serif;color:var(--ink)}
+.anniv cite{display:block;font:normal 12.5px "DM Sans";color:var(--ink-3);margin-top:8px}
+
+/* the letter */
+.letter-sec{padding:70px 0 80px}
+.letter{max-width:700px;margin:0 auto;background:#FBF6EA;color:#22281F;padding:44px 34px 50px;border-radius:4px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6);position:relative}
+@media(min-width:720px){.letter{padding:52px 58px 58px}}
+.dog-btn{position:relative;display:block;width:min(260px,70%);margin:-16px auto 14px;padding:0;border:0;background:none;cursor:default;-webkit-tap-highlight-color:transparent}
+.dog-btn:focus-visible{outline:1px dashed #A88543;outline-offset:6px}
+.letter .dog{width:100%;margin:0;mix-blend-mode:multiply}
+.jip{position:absolute;left:0;top:0;pointer-events:none;white-space:nowrap;font:italic 500 24px/1 Alegreya,serif;z-index:2}
+.letter p{font:300 17px/1.85 Merriweather,serif;margin:0 0 16px}
+.letter .sig{font:italic 400 26px Alegreya,serif;color:var(--green);margin-top:22px}
+
+footer{padding:56px 0 46px;text-align:center}
+footer .logo{width:150px;margin:0 auto 22px}
+footer .motto{font:italic 400 22px Alegreya,serif;margin-bottom:10px}
+footer .small{font-size:12.5px;opacity:.7;max-width:640px;margin:0 auto;line-height:1.6}
+
+/* contents page + ex libris */
+section[id]{scroll-margin-top:8px}
+.contents-sec{padding:6px 0 54px}
+.contents-grid{display:grid;gap:36px;align-items:center}
+@media(min-width:900px){.contents-grid{grid-template-columns:330px 1fr;gap:64px}}
+.bp-wrap{width:100%;max-width:330px;margin:0 auto;perspective:900px}
+.bookplate{position:relative;width:100%;text-align:center;padding:30px 22px 28px;box-shadow:0 24px 44px -26px rgba(0,0,0,.6);will-change:transform}
+.bp-gloss{position:absolute;inset:-22px;pointer-events:none;opacity:0;transition:opacity .6s ease;mix-blend-mode:screen;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,30%),rgba(241,223,171,.22),transparent 48%)}
+.bookplate.lit .bp-gloss{opacity:1}
+.bookplate .bl{font:italic 400 15px Alegreya,serif;color:var(--cream);opacity:.8}
+.bookplate .ex{font:italic 400 44px/1.05 Alegreya,serif;margin-top:4px}
+.bookplate svg{width:84px;height:84px;margin:18px auto 16px;color:#D2B373;display:block}
+.bookplate .nm{font:400 50px/1 Alegreya,serif}
+.bookplate .bp-ed{font:500 10.5px "DM Sans";letter-spacing:.22em;text-transform:uppercase;color:var(--brass-on-green);margin-top:16px}
+.toc-h{font:italic 400 clamp(38px,5vw,54px)/1 Alegreya,serif;color:var(--accent);margin:0 0 14px}
+.toc{list-style:none;margin:0;padding:0}
+.toc a{display:flex;align-items:baseline;gap:10px;padding:9px 8px;margin:0 -8px;color:var(--ink);text-decoration:none;border-radius:6px;transition:background .2s}
+.toc .tn{flex:none;width:32px;font:500 19px/1 Alegreya,serif;color:var(--brass)}
+.toc .tt{flex:0 1 auto;min-width:0;font:400 15.5px/1.35 Merriweather,serif;transition:color .15s}
+.toc .td{flex:1 1 14px;min-width:14px;border-bottom:1px dotted var(--ink-3);opacity:.55;transform:translateY(-4px);transition:opacity .15s,border-color .15s}
+.toc .tk{flex:none;font:italic 400 16px Alegreya,serif;color:var(--brass);white-space:nowrap}
+.toc a:hover .tt,.toc a:focus-visible .tt{color:var(--accent)}
+.toc a:hover .td,.toc a:focus-visible .td{opacity:1;border-bottom-color:#B8914F}
+.toc a[aria-current="true"]{background:linear-gradient(90deg,var(--green-soft),transparent 85%)}
+.toc a[aria-current="true"] .tt{color:var(--accent)}
+@media(max-width:420px){.toc .tk{display:none}.toc .tn{width:28px}}
+
+/* reading progress: a brass thread along the top */
+.progress{position:fixed;inset:0 0 auto 0;height:2px;z-index:46;transform-origin:0 50%;transform:scaleX(0);pointer-events:none;
+  background:linear-gradient(90deg,#9A7434,#E6CD8F 40%,#B8914F 70%,#D4B676)}
+
+/* desktop: ribbon bookmarks peeking out of the page edge */
+.ribbons{position:fixed;right:0;top:50%;z-index:40;margin:0;padding:0;list-style:none;display:none;flex-direction:column;align-items:flex-end;gap:5px;
+  transform:translateY(-50%);transition:opacity .45s ease,transform .45s ease}
+@media(min-width:1240px){.ribbons{display:flex}}
+.ribbons:not(.show){opacity:0;pointer-events:none;transform:translate(24px,-50%)}
+.ribbons li{filter:drop-shadow(-3px 3px 4px rgba(0,0,0,.28))}
+.rb{display:flex;align-items:center;gap:12px;height:34px;padding:0 20px 0 25px;border:0;margin:0;font:inherit;cursor:pointer;text-decoration:none;
+  background-color:var(--green);color:var(--cream);clip-path:polygon(0 0,100% 0,100% 100%,0 100%,11px 50%);
+  background-image:repeating-linear-gradient(90deg,rgba(210,179,115,.6) 0 4px,transparent 4px 7px),repeating-linear-gradient(90deg,rgba(210,179,115,.6) 0 4px,transparent 4px 7px);
+  background-size:100% 1px;background-position:0 4px,0 calc(100% - 4px);background-repeat:no-repeat;
+  transform:translateX(calc(100% - 50px));transition:transform .42s cubic-bezier(.2,.7,.2,1),background-color .25s,color .25s}
+.ribbons li:nth-child(even) .rb{background-color:#1E5039}
+.rb .rn{width:16px;flex:none;text-align:center;font:500 17px/1 Alegreya,serif;color:var(--brass-on-green);transition:color .25s}
+.rb .rn svg{width:18px;height:18px;display:block;margin:0 auto;color:currentColor}
+.rb .rt{font:italic 400 16px/1 Alegreya,serif;white-space:nowrap;opacity:0;transition:opacity .25s}
+.rb:hover,.rb:focus-visible{transform:translateX(0);outline:none}
+.rb:hover .rt,.rb:focus-visible .rt{opacity:1}
+.ribbons li .rb[aria-current="true"]{background-color:#C9A865;color:#16432E;transform:translateX(calc(100% - 64px))}
+.rb[aria-current="true"] .rn{color:#16432E}
+.ribbons li .rb[aria-current="true"]:hover,.ribbons li .rb[aria-current="true"]:focus-visible{transform:translateX(0)}
+
+/* phones & tablets: one ribbon hanging from the top edge */
+.mribbon-wrap{position:fixed;top:0;right:14px;z-index:41;filter:drop-shadow(0 4px 5px rgba(0,0,0,.3))}
+@media(min-width:1240px){.mribbon-wrap{display:none}}
+.mribbon{-webkit-appearance:none;appearance:none;width:60px;height:82px;border:0;margin:0;padding:12px 0 0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;
+  background-color:var(--green);color:var(--cream);clip-path:polygon(0 0,100% 0,100% 100%,50% calc(100% - 14px),0 100%);
+  background-image:repeating-linear-gradient(180deg,rgba(210,179,115,.65) 0 4px,transparent 4px 7px),repeating-linear-gradient(180deg,rgba(210,179,115,.65) 0 4px,transparent 4px 7px);
+  background-size:1px calc(100% - 14px);background-position:5px 0,calc(100% - 5px) 0;background-repeat:no-repeat;
+  transform:translateY(-110%);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.mribbon.show{transform:none}
+.mribbon.tug{animation:tug .55s cubic-bezier(.2,.7,.2,1)}
+@keyframes tug{0%{transform:translateY(-14px)}60%{transform:translateY(3px)}100%{transform:none}}
+.mribbon .mrk{font:500 8px/1 "DM Sans";letter-spacing:.1em;text-transform:uppercase;color:var(--brass-on-green)}
+.mribbon .mrn{font:500 25px/1 Alegreya,serif}
+
+/* the contents sheet */
+.sheet-dlg{border:0;padding:0;margin:auto;background:transparent;width:min(560px,calc(100vw - 24px));max-width:none;max-height:none;overflow:visible;color:var(--ink)}
+.sheet-dlg::backdrop{background:rgba(6,18,12,.55);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.sheet{background:var(--card);max-height:calc(100dvh - 32px);overflow:auto;padding:26px 22px 20px;position:relative;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.sheet-dlg[open] .sheet{animation:sheetIn .42s cubic-bezier(.2,.7,.2,1)}
+@keyframes sheetIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
+.sheet .toc-h{text-align:center;font-size:44px;margin:4px 0 4px}
+.sheet .sh-sub{text-align:center;font:italic 400 15px Alegreya,serif;color:var(--ink-3);margin:0 0 14px}
+.sheet .x{position:absolute;top:2px;right:2px;width:44px;height:44px;border:0;background:none;cursor:pointer;color:var(--brass);font:400 30px/1 Alegreya,serif;border-radius:50%}
+.sheet .x:hover{color:var(--accent)}
+
+/* chapter 9: the book club shelf */
+.bc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:26px}
+@media(max-width:640px){.bc-stats{gap:8px}.bc-stats .tile{padding:14px 12px}.bc-stats .tile .v{font-size:26px}.bc-stats .tile .l{font-size:11.5px}}
+.bc-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:start}
+@media(min-width:960px){.bc-grid{grid-template-columns:minmax(0,1fr) 320px}}
+.shelves{display:grid;gap:26px;min-width:0}
+.shelf{display:grid;grid-template-columns:62px minmax(0,1fr);align-items:end;gap:10px}
+@media(max-width:640px){.shelf{grid-template-columns:minmax(0,1fr);gap:4px}}
+.shelf .yr{font:italic 400 24px/1 Alegreya,serif;color:var(--brass);padding-bottom:14px}
+@media(max-width:640px){.shelf .yr{padding-bottom:0}}
+.books{list-style:none;margin:0;padding:22px 6px 0;display:flex;align-items:flex-end;gap:4px;position:relative;min-height:250px;overflow-x:auto;overflow-y:visible;scrollbar-width:thin;scroll-snap-type:x proximity}
+.plank{height:10px;border-radius:2px;background:linear-gradient(#C9A865,#8A6A2E);box-shadow:0 8px 14px -8px rgba(0,0,0,.55);margin-top:-1px}
+.books li{flex:none;scroll-snap-align:start}
+.spine{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:space-between;width:var(--w);height:var(--h);padding:16px 0 9px;margin:0;border:0;border-radius:3px 3px 1px 1px;cursor:pointer;font:inherit;color:var(--tx);
+  background:linear-gradient(90deg,rgba(0,0,0,.28),rgba(255,255,255,.10) 16%,rgba(255,255,255,0) 42%,rgba(0,0,0,.2)),var(--c);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.12),0 2px 3px rgba(0,0,0,.25);transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.spine::before,.spine::after{content:"";position:absolute;left:4px;right:4px;height:3px;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);opacity:.85}
+.spine::before{top:7px}.spine::after{bottom:24px}
+.spine.k-v::before{height:6px}
+.spine .st{writing-mode:vertical-rl;text-orientation:sideways;font:400 14px/1 Alegreya,serif;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-height:calc(var(--h) - 56px)}
+.spine .sn{font:500 9px/1 "DM Sans";letter-spacing:.04em;opacity:.8}
+.spine:hover,.spine:focus-visible{transform:translateY(-8px);outline:none}
+.spine.sel{transform:translateY(-14px);box-shadow:inset 0 0 0 1px rgba(0,0,0,.12),0 0 0 2px #C9A865,0 10px 14px -6px rgba(0,0,0,.45)}
+.spine .rib{position:absolute;top:-16px;right:7px;width:9px;height:34px;background:#C9A865;clip-path:polygon(0 0,100% 0,100% 100%,50% 78%,0 100%);box-shadow:0 1px 2px rgba(0,0,0,.3)}
+.card-wrap{position:sticky;top:96px}
+.catcard{position:relative;background:#FBF6EA;color:#22281F;border-radius:4px;padding:22px 24px 46px;min-height:330px;box-shadow:0 24px 40px -22px rgba(0,0,0,.5);
+  background-image:linear-gradient(#FBF6EA 0 86px,transparent 86px),repeating-linear-gradient(transparent 0 27px,rgba(22,67,46,.10) 27px 28px)}
+.cc-top{display:flex;flex-direction:column;gap:3px}
+.cc-top #cc-no{font:500 11px/1.4 "DM Sans";letter-spacing:.16em;text-transform:uppercase;color:#8A6A2E}
+.cc-top #cc-date{font:italic 400 16px/1.3 Alegreya,serif;color:#4A4A44}
+.cc-rule{height:2px;background:#7A2E3A;opacity:.7;margin:10px 0 16px}
+.cc-t{margin:0;font:400 28px/1.12 Alegreya,serif;color:#16432E}
+.cc-a{font:italic 400 18px/1.3 Alegreya,serif;color:#4A4A44;margin:4px 0 14px}
+.cc-k{display:flex;align-items:center;gap:8px;font:500 12px "DM Sans";color:#4A4A44}
+.cc-k i{width:12px;height:18px;border-radius:2px;display:inline-block;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+.cc-l{font:italic 400 17px/1.55 Alegreya,serif;color:#22281F;margin:14px 0 0}
+.cc-stamp{position:absolute;right:18px;bottom:44px;transform:rotate(-8deg);border:2px solid #7A2E3A;color:#7A2E3A;border-radius:4px;padding:3px 10px;font:600 12px "DM Sans";letter-spacing:.2em;text-transform:uppercase;opacity:.85}
+.cc-hole{position:absolute;left:50%;bottom:14px;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:var(--paper);box-shadow:inset 0 2px 3px rgba(0,0,0,.35)}
+.bc-legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:22px;font-size:13px;color:var(--ink-2)}
+.bc-legend span{display:inline-flex;align-items:center;gap:8px}
+.bc-legend i{width:11px;height:18px;border-radius:2px;display:inline-block;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+@media (prefers-reduced-motion: reduce){.spine{transition:none}}
+
+/* finishing touches */
+.letter p.dc::first-letter{float:left;font:400 78px/.78 Alegreya,serif;color:#A88543;margin:8px 10px 0 0}
+.epi{text-align:center;margin-bottom:28px}
+.epi .no{font-size:26px;color:var(--brass-on-green);margin:0}
+.epi .foil-rule{width:240px;max-width:100%;margin:10px auto 0}
+.colophon{max-width:540px;margin:34px auto 0;padding-top:26px;border-top:1px solid rgba(210,179,115,.3)}
+.colophon .h{font:500 11px "DM Sans";letter-spacing:.24em;text-transform:uppercase;color:var(--brass-on-green);margin-bottom:12px}
+.colophon p{font:italic 400 17px/1.6 Alegreya,serif;margin:0 0 10px;opacity:.9}
+.colophon .fine{font:normal 12px/1.6 "DM Sans";opacity:.6}
+.fin{font:italic 400 34px Alegreya,serif;margin-top:22px;color:var(--brass-on-green)}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.lamp{animation:none;opacity:.5}.reveal{opacity:1;transform:none;transition:none}.q{animation:none}.hb .f,.col .b{transition:none}.foil{animation:none}.rb,.mribbon,.ribbons{transition:none}.mribbon.tug,.sheet-dlg[open] .sheet{animation:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- the Luddites mark: open pages and a wine glass, after the logo -->
+    <symbol id="mark" viewBox="0 0 1200 1200">
+      <g fill="none" stroke="currentColor" stroke-width="7">
+        <rect x="68" y="68" width="1064" height="1064"/>
+        <path d="M600 68V1132M68 600H1132"/>
+        <path d="M600 68A266 532 0 0 1 866 600M1132 68A266 532 0 0 0 866 600M600 334A266 266 0 0 1 866 600M1132 334A266 266 0 0 0 866 600"/>
+        <path d="M68 600A266 266 0 0 0 600 600M334 866V1132"/>
+      </g>
+    </symbol>
+    <symbol id="logo-words" viewBox="0 0 1200 1200">
+      <g fill="currentColor" font-family="Alegreya" text-anchor="middle">
+        <text x="334" y="306" font-size="78" textLength="279" lengthAdjust="spacingAndGlyphs">Luddites</text>
+        <text x="334" y="398" font-size="78" font-style="italic" textLength="392" lengthAdjust="spacingAndGlyphs">Books &amp; Wine</text>
+        <text x="866" y="838" font-size="76" textLength="351" lengthAdjust="spacingAndGlyphs">Hopland 34</text>
+        <text x="866" y="928" font-size="76" textLength="438" lengthAdjust="spacingAndGlyphs">2000 Antwerp</text>
+      </g>
+    </symbol>
+    <symbol id="mark-sm" viewBox="0 0 1200 1200">
+      <g fill="none" stroke="currentColor" stroke-width="64">
+        <rect x="68" y="68" width="1064" height="1064"/>
+        <path d="M600 68V1132M68 600H1132"/>
+        <path d="M600 68A266 532 0 0 1 866 600M1132 68A266 532 0 0 0 866 600M600 334A266 266 0 0 1 866 600M1132 334A266 266 0 0 0 866 600"/>
+        <path d="M68 600A266 266 0 0 0 600 600M334 866V1132"/>
+      </g>
+    </symbol>
+    <symbol id="glyph" viewBox="0 0 40 20">
+      <g fill="none" stroke="currentColor" stroke-width="1.4">
+        <path d="M0 0A10 20 0 0 1 10 20M20 0A10 20 0 0 0 10 20M0 10A10 10 0 0 1 10 20M20 10A10 10 0 0 0 10 20"/>
+        <path d="M20 0A10 10 0 0 0 40 0M30 10V20"/>
+      </g>
+    </symbol>
+    <!-- dry-brush grain for the resident cats, after the studio's Jip -->
+     <filter id="gouache" x="-4%" y="-4%" width="108%" height="108%" color-interpolation-filters="sRGB">
+  <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="1" seed="4" result="e"/>
+  <feDisplacementMap in="SourceGraphic" in2="e" scale="1.1" xChannelSelector="R" yChannelSelector="G" result="shape"/>
+  <feTurbulence type="fractalNoise" baseFrequency=".07" numOctaves="3" seed="21" result="w"/>
+  <feColorMatrix in="w" type="matrix" values="0 0 0 0 .3  0 0 0 0 .18  0 0 0 0 .1  0 -.5 0 0 .29" result="mottle"/>
+  <feComposite in="mottle" in2="shape" operator="in" result="mo"/>
+  <feTurbulence type="fractalNoise" baseFrequency=".95" numOctaves="2" seed="9" result="n"/>
+  <feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 .98  0 0 0 0 .93  1.5 0 0 0 -.88" result="fleck"/>
+  <feComposite in="fleck" in2="shape" operator="in" result="fl"/>
+  <feTurbulence type="fractalNoise" baseFrequency=".6" numOctaves="2" seed="13" result="m"/>
+  <feColorMatrix in="m" type="matrix" values="0 0 0 0 .25  0 0 0 0 .14  0 0 0 0 .08  0 -.36 0 0 .2" result="tooth"/>
+  <feComposite in="tooth" in2="shape" operator="in" result="th"/>
+  <feMerge><feMergeNode in="shape"/><feMergeNode in="mo"/><feMergeNode in="th"/><feMergeNode in="fl"/></feMerge>
+ </filter>
+ <filter id="blur2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2"/></filter>
+ <filter id="blur4" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
+    
+  </defs>
+</svg>
+
+<div class="band plate">Become part of the conspiracy <b>A special edition, just for Jorien</b></div>
+
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="#top"><svg aria-hidden="true"><use href="#mark"/></svg><span class="wm">Luddites<i>Books &amp; Wine</i></span></a>
+    <div class="nav-r"><a href="#contents">Contents</a><a href="#verdict">Verdict</a><a href="#house">The House</a><a href="#editions">Editions</a><a href="#story">Story</a>
+      <button class="theme" id="theme" aria-label="Toggle dark mode" title="Lights on / candlelit">☾</button></div>
+  </nav>
+</div>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="cover plate frame">
+      <svg class="logo" viewBox="0 0 1200 1200" aria-hidden="true" style="color:#D2B373">
+        <use href="#mark"/>
+        <use href="#logo-words"/>
+      </svg>
+      <div class="kicker">The Monthly Manuscript of Marginalia · Special Edition · October 2026</div>
+      <h1 class="foil">your hideout, as told by strangers</h1>
+      <p class="lede">Six and a half years, 657 Google reviews, and one recurring theme: people walk in for a book, stay for a glass, and leave a little bit in love. Here is everything they wrote, sorted, counted and bound in green and brass.</p>
+      <div class="ded">for Jorien, co-conspirator in chief</div>
+    </div>
+  </div>
+</header>
+
+<section id="contents" class="contents-sec">
+  <div class="wrap">
+    <div class="contents-grid">
+      <div class="bp-wrap reveal" id="bp-wrap"><div class="bookplate plate frame" id="bookplate">
+        <span class="bp-gloss" aria-hidden="true"></span>
+        <div class="bl">This copy belongs to</div>
+        <div class="ex foil">Ex Libris</div>
+        <svg viewBox="0 0 1200 1200" aria-hidden="true"><use href="#mark"/></svg>
+        <div class="nm foil">Jorien</div>
+        <div class="bp-ed">An edition of one · October 2026</div>
+      </div></div>
+      <nav class="reveal" aria-label="Contents">
+        <h2 class="toc-h">Contents</h2>
+        <ol class="toc" id="toc-page"></ol>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<section id="verdict">
+  <div class="wrap">
+    <div class="sec-h reveal"><h2><span class="no">Chapter 1</span>Reader, They Loved It</h2><p>Every Google review of Luddites Books &amp; Wine, Hopland 34, collected on 24 October 2026.</p></div>
+    <div class="tiles reveal">
+      <div class="tile hero-t plate"><div class="stars">★★★★★</div><div class="v foil">4.9</div><div class="l">average rating across 657 reviews. Google rounds it; we don't need to.</div></div>
+      <div class="tile"><div class="v">88<small>%</small></div><div class="l">gave the full five stars (578 people)</div></div>
+      <div class="tile"><div class="v">2</div><div class="l">one-star reviews in six and a half years. Two.</div></div>
+      <div class="tile"><div class="v">345</div><div class="l">took the time to write actual words</div></div>
+      <div class="tile"><div class="v">218</div><div class="l">photos shared by reviewers</div></div>
+    </div>
+    <div class="g2" style="margin-top:22px">
+      <div class="card reveal">
+        <h3>The star ledger</h3>
+        <p class="sub">How the 657 ratings fall</p>
+        <div class="hb" id="starbars"></div>
+      </div>
+      <div class="card reveal">
+        <h3>Reviews per year</h3>
+        <p class="sub">From the March 2020 opening to this week</p>
+        <div class="cols" id="years"></div>
+        <div class="xl" id="yearsx"></div>
+        <p class="note">Google only says “3 years ago”, so years are approximate. 2026 is striped because it isn't over yet: 94 reviews by late October.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap divider"><div class="foil-rule c"></div></div>
+
+<section id="talk">
+  <div class="wrap">
+    <div class="sec-h reveal"><h2><span class="no">Chapter 2</span>What They Talk About When They Talk About Luddites</h2><p>Share of the 345 written reviews that mention each theme. Many mention several.</p></div>
+    <div class="g2">
+      <div class="card reveal">
+        <h3>The recurring themes</h3>
+        <p class="sub">Hover a row for the count</p>
+        <div class="hb" id="themes"></div>
+      </div>
+      <div class="card reveal">
+        <h3>The Luddites lexicon</h3>
+        <p class="sub">The words reviewers reach for most, sized by how many reviews use them</p>
+        <div class="cloud" id="cloud"></div>
+        <p class="note" style="margin-top:22px">“Wine” (179 reviews) runs neck and neck with “book” (188). Nobody's complaining.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="house">
+  <div class="wrap">
+    <div class="sec-h reveal"><h2><span class="no">Chapter 3</span>The House on Hopland</h2><p>Reviewers describe Luddites floor by floor. Tap a floor on the drawing.</p></div>
+    <div class="house-wrap">
+      <div class="reveal">
+        <div class="drawing" id="drawing">
+          <img id="bldg" class="raw" src="assets/building.jpg" alt="Pen drawing of the Luddites building on Hopland, with guests raising glasses in the windows" width="900" height="1500">
+          <i class="lamp" aria-hidden="true"></i><button class="spot" data-f="0" style="top:9%;height:25%" aria-label="Who lives upstairs? The flat on the second floor" aria-expanded="false" aria-controls="flat"><span>Who lives upstairs?</span></button>
+          <button class="spot" data-f="1" style="top:34.5%;height:21%" aria-label="Wine bar, first floor"><span>The wine bar</span></button>
+          <button class="spot" data-f="2" style="top:56%;height:29.5%" aria-label="Bookshop, ground floor"><span>The bookshop</span></button>
+          <button class="spot" data-f="3" style="top:86%;height:12.5%" aria-label="Children's and YA, basement"><span>Children's &amp; YA</span></button>
+        </div>
+      </div>
+      <div class="floors" id="floors">
+        <div class="floor flat" data-f="0" id="flat" hidden>
+          <button class="flat-x" type="button" aria-label="Back downstairs">&times;</button>
+          <div class="lvl">Second floor · Residents only</div>
+          <h3>The flat upstairs</h3>
+          <p>The rooms above the shop have never stood empty. Richard and Katia lived here first, with Plushkin and Catsby. Then you and Stijn, with Jip. Now it's Catherine, long since part of the furniture, with Molly, a guitar, a keyboard, a singing voice and Harry Potter on the PlayStation.</p>
+          <div class="residents">
+            <figure><svg viewBox="0 0 300 320" role="img" aria-label="Drawing of Plushkin and Catsby, two fluffy colourpoint cats with blue eyes, on a black library step stool"><defs><linearGradient id="pc-creamA" x1=".1" y1="0" x2=".9" y2=".3"><stop offset="0" stop-color="#F8F1E5"/><stop offset=".5" stop-color="#EFE3CF"/><stop offset="1" stop-color="#D8C3A3"/></linearGradient><linearGradient id="pc-creamB" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#F2E7D5"/><stop offset=".55" stop-color="#E6D3B6"/><stop offset="1" stop-color="#CDB28C"/></linearGradient><radialGradient id="pc-maskA" gradientUnits="userSpaceOnUse" cx="150" cy="68" r="30"><stop offset="0" stop-color="#5F6877"/><stop offset=".45" stop-color="#7D8592" stop-opacity=".95"/><stop offset="1" stop-color="#A9ADB4" stop-opacity="0"/></radialGradient><radialGradient id="pc-maskB" gradientUnits="userSpaceOnUse" cx="106" cy="182" r="26"><stop offset="0" stop-color="#3F2C23"/><stop offset=".5" stop-color="#5E4334" stop-opacity=".95"/><stop offset="1" stop-color="#9C7E66" stop-opacity="0"/></radialGradient><linearGradient id="pc-tailA" gradientUnits="userSpaceOnUse" x1="222" y1="142" x2="250" y2="88"><stop offset="0" stop-color="#B7B4B4"/><stop offset=".45" stop-color="#8A919C"/><stop offset="1" stop-color="#626B79"/></linearGradient><linearGradient id="pc-tailB" gradientUnits="userSpaceOnUse" x1="0" y1="196" x2="0" y2="290"><stop offset="0" stop-color="#BFA080"/><stop offset=".4" stop-color="#7A5844"/><stop offset="1" stop-color="#47332A"/></linearGradient><linearGradient id="pc-wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#46505A"/><stop offset=".3" stop-color="#303841"/><stop offset="1" stop-color="#262D34"/></linearGradient><clipPath id="pc-hA"><path d="M150 72C144 70 141 64 144 60C147 56 152 54 156 54C158 46 164 42 172 42C186 42 194 52 194 64C194 76 184 86 172 86C164 86 158 82 156 78C154 76 152 74 150 72Z"/></clipPath><clipPath id="pc-hB"><path d="M104 186C99 185 96 180 98 176C100 172 104 170 108 170C110 162 116 158 124 158C136 158 143 166 143 177C143 188 135 196 124 196C117 196 112 193 109 189Z"/></clipPath><clipPath id="pc-bA"><path d="M162 150C155 134 154 112 160 96C165 84 174 78 184 78C200 80 214 94 221 112C228 128 228 142 222 150Z"/></clipPath><clipPath id="pc-bB"><path d="M116 208C110 196 114 182 128 177C150 170 192 168 218 176C234 181 240 196 234 208Z"/></clipPath></defs><ellipse cx="152" cy="296" rx="134" ry="12" fill="#EAE4C6"/><ellipse cx="111.80000000000001" cy="297" rx="73.7" ry="6.6000000000000005" fill="#E3DDB8" opacity=".7"/><g filter="url(#gouache)"><path d="M150 146L160 146L66 296L52 296Z" fill="#2C343C"/><path d="M232 146L242 146L252 296L240 296Z" fill="#262D34"/><rect x="146" y="150" width="102" height="9" rx="2.5" fill="url(#pc-wood)"/><rect x="149" y="150" width="96" height="2" rx="1" fill="#6A7580" opacity=".7"/><rect x="98" y="208" width="156" height="9" rx="2.5" fill="url(#pc-wood)"/><rect x="101" y="208" width="150" height="2" rx="1" fill="#6A7580" opacity=".7"/><rect x="68" y="262" width="190" height="9" rx="2.5" fill="url(#pc-wood)"/><rect x="71" y="262" width="184" height="2" rx="1" fill="#6A7580" opacity=".7"/><path d="M224 196C232 194 238 196 238 200 Q254.5 217.1 250 226 Q257.3 232.5 251 240 Q256.7 248 249 254 Q253.5 262.9 245 268 Q247.4 277.4 238 280 Q238.8 288.8 230 288C232 282 236 266 236 252C236 236 232 220 222 208Z" fill="url(#pc-tailB)"/><path d="M116 208C110 196 114 182 128 177C150 170 192 168 218 176C234 181 240 196 234 208Z" fill="url(#pc-creamB)"/><g clip-path="url(#pc-bB)"><ellipse cx="214" cy="190" rx="22" ry="16" fill="#C7AA84" opacity=".7" filter="url(#blur4)"/><ellipse cx="170" cy="210" rx="64" ry="7" fill="#C0A27C" opacity=".6" filter="url(#blur4)"/><ellipse cx="164" cy="176" rx="40" ry="5" fill="#FBF5EA" opacity=".7" filter="url(#blur4)"/></g><ellipse cx="214" cy="205" rx="13" ry="4.5" fill="#F6EFE3"/><path d="M112 190C114 186 120 186 124 190 Q121.2 194.6 126 197 Q121.2 199.4 124 204L112 206Z" fill="#F8F2E7"/><ellipse cx="104" cy="205.5" rx="10.5" ry="4.4" fill="#FBF7F0"/><ellipse cx="121" cy="206.5" rx="9.5" ry="4" fill="#F4EDE1"/><path d="M124 160L131 138L140 166Z" fill="#4A352B"/><path d="M108 168L108 144L122 161Z" fill="#5A4034"/><path d="M110 164L110 151L118 161Z" fill="#9A7666"/><path d="M104 186C99 185 96 180 98 176C100 172 104 170 108 170C110 162 116 158 124 158C136 158 143 166 143 177C143 188 135 196 124 196C117 196 112 193 109 189Z" fill="#EADCC6"/><path d="M128 195 Q132.8 197.1 136 193 Q141.3 192.3 142 187 Q146.4 184.8 145 180L138 176Z" fill="#EADCC6"/><g clip-path="url(#pc-hB)"><rect x="90" y="150" width="60" height="50" fill="url(#pc-maskB)"/></g><path d="M109.5 175.6q3.2 3 6.4 0" stroke="#1E2A36" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M97 176.4q1.8-1.4 3.2.2-.6 2.2-2 2.4-1.6-.6-1.2-2.6z" fill="#2B1E19"/><path d="M100 182.5q2.6 1.8 5.6.4" stroke="#2B1E19" stroke-width=".9" fill="none" stroke-linecap="round"/><path d="M218 146C222 146 224 146 226 146 Q244.3 134.9 244 126 Q251.3 122 249 114 Q254.7 108.4 250 102 Q253.5 95.5 247 92 Q248.5 85.7 242 86C240 96 239 108 236 118C232 130 226 136 218 140Z" fill="url(#pc-tailA)"/><path d="M162 150C155 134 154 112 160 96C165 84 174 78 184 78C200 80 214 94 221 112C228 128 228 142 222 150Z" fill="url(#pc-creamA)"/><g clip-path="url(#pc-bA)"><ellipse cx="210" cy="126" rx="16" ry="22" fill="#CBB596" opacity=".75" filter="url(#blur4)"/><ellipse cx="184" cy="84" rx="22" ry="7" fill="#D3C0A2" opacity=".7" filter="url(#blur4)"/></g><g clip-path="url(#pc-bA)"><path d="M199 108C205 120 206 136 203 150" stroke="#C9B392" stroke-width="5" fill="none" filter="url(#blur2)"/><ellipse cx="213" cy="132" rx="9" ry="15" fill="#F3E8D6" opacity=".8" filter="url(#blur4)"/><path d="M180 116C181 128 181 140 180 150" stroke="#D4C0A0" stroke-width="3" fill="none" opacity=".55" filter="url(#blur2)"/></g><ellipse cx="206" cy="148" rx="12" ry="4.2" fill="#F4EDE1"/><path d="M170 84C164 86 160 90 159 96 Q152.8 96.8 154 103 Q148.5 105.9 152 111 Q147.9 115.6 153 119 Q150.2 124.6 156 127 Q154 132.8 160 134L170 132C166 118 166 100 170 84Z" fill="#F8F2E7"/><ellipse cx="168" cy="148" rx="10" ry="4.4" fill="#FBF7F0"/><g transform="translate(172 72) scale(1.2) translate(-172 -72)"><path d="M178 48L186 24L194 54Z" fill="#646D7A"/><path d="M160 52L158 26L175 45Z" fill="#7A838F"/><path d="M162 47L161 33L170 44Z" fill="#B9A9AE"/><path d="M150 72C144 70 141 64 144 60C147 56 152 54 156 54C158 46 164 42 172 42C186 42 194 52 194 64C194 76 184 86 172 86C164 86 158 82 156 78C154 76 152 74 150 72Z" fill="#ECE2D5"/><path d="M176 86 Q181.2 88.3 185 84 Q190.7 83.6 192 78 Q197 75.5 196 70L186 66Z" fill="#ECE2D5"/><g clip-path="url(#pc-hA)"><rect x="136" y="36" width="70" height="56" fill="url(#pc-maskA)"/><path d="M160 44Q166 40 170 44L164 62Q160 60 158 56Z" fill="#F8F4ED" opacity=".95"/></g><ellipse cx="160.5" cy="62" rx="3.5" ry="2.6" fill="#8DB4E0"/><circle cx="159.6" cy="62.2" r="1.45" fill="#1E2A36"/><circle cx="161.2" cy="61.2" r=".55" fill="#fff"/><path d="M142.2 61.2q2-1.6 3.6.2-.6 2.4-2.2 2.6-1.8-.6-1.4-2.8z" fill="#9B7880"/><path d="M145.4 68.6q2.8 1.8 6 .2" stroke="#4E5562" stroke-width=".9" fill="none" stroke-linecap="round"/></g></g><path d="M70 58.5Q71.2 62.8 75.5 64Q71.2 65.2 70 69.5Q68.8 65.2 64.5 64Q68.8 62.8 70 58.5Z" fill="#E4AEC0"/><path d="M118 26.5Q118.8 29.2 121.5 30Q118.8 30.8 118 33.5Q117.2 30.8 114.5 30Q117.2 29.2 118 26.5Z" fill="#B4D8D2"/><path d="M270 57.5Q271 61 274.5 62Q271 63 270 66.5Q269 63 265.5 62Q269 61 270 57.5Z" fill="#C0DED8"/><path d="M40 186.5Q40.8 189.2 43.5 190Q40.8 190.8 40 193.5Q39.2 190.8 36.5 190Q39.2 189.2 40 186.5Z" fill="#E4AEC0"/><g stroke="#489090" stroke-width="1.6" stroke-linecap="round"><path d="M126 52h6M129 57h4"/></g></svg><figcaption>Plushkin &amp; Catsby<span>Richard and Katia's</span></figcaption></figure>
+            <figure><svg viewBox="0 0 300 320" role="img" aria-label="Drawing of Molly, a fluffy tortoiseshell cat with folded ears and yellow-green eyes, sitting on Catherine&#8217;s keyboard beside her guitar"><defs><linearGradient id="mo-body" x1="0" y1="0" x2="1" y2=".2"><stop offset="0" stop-color="#3E3633"/><stop offset=".6" stop-color="#2F2A29"/><stop offset="1" stop-color="#262222"/></linearGradient><linearGradient id="mo-gtr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D9654A"/><stop offset=".55" stop-color="#C0503A"/><stop offset="1" stop-color="#9C3C2A"/></linearGradient><linearGradient id="mo-kb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#48505A"/><stop offset=".25" stop-color="#323940"/><stop offset="1" stop-color="#262C32"/></linearGradient><linearGradient id="mo-tail" gradientUnits="userSpaceOnUse" x1="140" y1="250" x2="168" y2="158"><stop offset="0" stop-color="#2F2A29"/><stop offset=".55" stop-color="#3A3230"/><stop offset=".76" stop-color="#B8622F"/><stop offset="1" stop-color="#DA8A52"/></linearGradient><linearGradient id="mo-eye" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCDA82"/><stop offset="1" stop-color="#B4BE52"/></linearGradient><clipPath id="mo-b"><path d="M62 258C55 232 62 204 80 190C90 182 110 182 120 190C138 204 145 232 138 258Z"/></clipPath><clipPath id="mo-h"><path d="M62 160C62 140 78 126 100 126S138 140 138 160C138 180 122 194 100 194S62 180 62 160Z"/></clipPath></defs><ellipse cx="150" cy="296" rx="134" ry="12" fill="#EAE4C6"/><ellipse cx="109.80000000000001" cy="297" rx="73.7" ry="6.6000000000000005" fill="#E3DDB8" opacity=".7"/><g filter="url(#gouache)"><g transform="rotate(9 226 290)"><rect x="220" y="58" width="12" height="104" rx="2" fill="#5A3626"/><path d="M217 34Q226 28 235 34L233 60H219Z" fill="#3E2419"/><g fill="#E9D9B4"><circle cx="216" cy="40" r="1.8"/><circle cx="216" cy="50" r="1.8"/><circle cx="236" cy="40" r="1.8"/><circle cx="236" cy="50" r="1.8"/></g><path d="M220 78h12M220 94h12M220 108h12M220 121h12M220 133h12M220 144h12" stroke="#C9A97A" stroke-width=".8" opacity=".75"/><path d="M226 146C203 146 194 160 196 176C198 188 192 194 188 206C180 232 196 270 226 270S272 232 264 206C260 194 254 188 256 176C258 160 249 146 226 146Z" fill="url(#mo-gtr)"/><path d="M204 214C200 236 210 256 226 262" stroke="#E98A6C" stroke-width="3" fill="none" opacity=".45" stroke-linecap="round"/><circle cx="226" cy="190" r="13" fill="#2A1A14"/><circle cx="226" cy="190" r="15.5" fill="none" stroke="#E9D9B4" stroke-width="1.2" opacity=".7"/><rect x="212" y="234" width="28" height="6" rx="2" fill="#3E2419"/><path d="M223.4 36V236M225.2 36V236M227 36V236M228.8 36V236" stroke="#F3E6C8" stroke-width=".5" opacity=".8"/></g><rect x="28" y="252" width="244" height="32" rx="6" fill="url(#mo-kb)"/><rect x="32" y="252" width="236" height="2.4" rx="1.2" fill="#77818B" opacity=".75"/><rect x="40" y="284" width="10" height="5" rx="1.5" fill="#21262B"/><rect x="250" y="284" width="10" height="5" rx="1.5" fill="#21262B"/><rect x="36" y="260" width="22" height="7" rx="1.5" fill="#7CB8B0"/><circle cx="41" cy="274" r="2.4" fill="#C9CED3"/><circle cx="49" cy="274" r="2.4" fill="#C9CED3"/><circle cx="57" cy="274" r="2.4" fill="#E4BA4E"/><rect x="64" y="260" width="202" height="19" rx="1.5" fill="#F7F1E4"/><path d="M71.2 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M78.4 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M85.6 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M92.9 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M100.1 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M107.3 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M114.5 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M121.7 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M128.9 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M136.1 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M143.4 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M150.6 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M157.8 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M165 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M172.2 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M179.4 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M186.6 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M193.9 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M201.1 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M208.3 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M215.5 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M222.7 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M229.9 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M237.1 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M244.4 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M251.6 260v19" stroke="#CFC5B2" stroke-width=".7"/><path d="M258.8 260v19" stroke="#CFC5B2" stroke-width=".7"/><rect x="68.9" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><rect x="76.1" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><rect x="90.5" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><rect x="97.8" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><rect x="105" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><rect x="119.4" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><rect x="126.6" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><rect x="141" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><rect x="148.3" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><rect x="155.5" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><rect x="169.9" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><rect x="177.1" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><rect x="191.5" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><rect x="198.8" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><rect x="206" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><rect x="220.4" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><rect x="227.6" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><rect x="242" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><rect x="249.3" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><rect x="256.5" y="260" width="4.6" height="11" rx=".8" fill="#2A2F35"/><path d="M126 254C136 256 144 254 150 250 Q175.6 236.3 176 226 Q183.8 219.7 181 210 Q187.1 202.3 182 194 Q186 185 179 178 Q181 169.5 173 166 Q173 158 165 158C166 170 168 184 167 198C166 214 160 228 150 236C142 242 134 246 126 246Z" fill="url(#mo-tail)"/><g transform="translate(100 258) scale(1.1) translate(-100 -258)"><path d="M62 258C55 232 62 204 80 190C90 182 110 182 120 190C138 204 145 232 138 258Z" fill="url(#mo-body)"/><g clip-path="url(#mo-b)"><g filter="url(#blur2)"><path d="M58 214C70 206 80 214 78 230C76 244 64 252 56 248Z" fill="#C76736"/><path d="M120 236C132 228 146 236 146 250L146 262L118 262C114 252 114 242 120 236Z" fill="#C76736"/><ellipse cx="128" cy="208" rx="7" ry="11" fill="#A5492B" opacity=".9"/><ellipse cx="70" cy="252" rx="8" ry="6" fill="#ECCB9E" opacity=".85"/></g></g><path d="M84 190C94 197 106 197 116 190C120 199 118 208 113 213 Q111.5 217.5 107 216 Q104 219.9 100 217 Q96 219.9 93 216 Q88.5 217.5 87 213C82 208 80 199 84 190Z" fill="#DA8A52"/><path d="M94 196C98 199 102 199 106 196C106 204 104 210 100 213C96 210 94 204 94 196Z" fill="#ECCB9E" opacity=".85"/><path d="M82 224C80 236 81 248 83 257L99 257C99 246 99 236 98 228Q90 230 82 224Z" fill="#453C38"/><path d="M102 228C101 238 101 248 101 257L117 257C119 248 120 236 118 224Q110 230 102 228Z" fill="#C76736"/><path d="M100 232V256" stroke="#1E1A1A" stroke-width="2" opacity=".55" filter="url(#blur2)"/><ellipse cx="90" cy="256" rx="9.5" ry="4.6" fill="#3B3431"/><ellipse cx="110" cy="256" rx="9.5" ry="4.6" fill="#DA8A52"/><path d="M62 160C62 140 78 126 100 126S138 140 138 160C138 180 122 194 100 194S62 180 62 160Z" fill="#2F2A29"/><path d="M66 172 Q66.6 177.9 61 180 Q65.9 183.4 64 189 Q69.9 188.4 72 194L78 184Z" fill="#2F2A29"/><path d="M134 172 Q133.4 177.9 139 180 Q134.1 183.4 136 189 Q130.1 188.4 128 194L122 184Z" fill="#C76736"/><g clip-path="url(#mo-h)"><path d="M101 120C106 140 104 170 100 200L150 200L150 120Z" fill="#C76736"/><path d="M101 120C106 140 104 170 100 200" stroke="#A5492B" stroke-width="4" fill="none" opacity=".6" filter="url(#blur2)"/><ellipse cx="124" cy="146" rx="14" ry="10" fill="#DA8A52" opacity=".8" filter="url(#blur4)"/><ellipse cx="78" cy="146" rx="12" ry="9" fill="#4A403C" opacity=".9" filter="url(#blur4)"/><ellipse cx="100" cy="182" rx="15" ry="10" fill="#E39A5B"/><ellipse cx="96" cy="179" rx="8" ry="5" fill="#ECCB9E" opacity=".7" filter="url(#blur2)"/></g><path d="M68 142C68 130 76 124 86 126C84 134 78 140 68 142Z" fill="#262222"/><path d="M132 142C132 130 124 124 114 126C116 134 122 140 132 142Z" fill="#A5492B"/><circle cx="86" cy="159" r="7.2" fill="url(#mo-eye)"/><ellipse cx="86" cy="159.5" rx="2.2" ry="5.2" fill="#1E2A36"/><circle cx="88.4" cy="156.4" r="1.3" fill="#fff" opacity=".9"/><circle cx="114" cy="159" r="7.2" fill="url(#mo-eye)"/><ellipse cx="114" cy="159.5" rx="2.2" ry="5.2" fill="#1E2A36"/><circle cx="116.4" cy="156.4" r="1.3" fill="#fff" opacity=".9"/><path d="M97.4 170.5h5.2l-2.6 3z" fill="#8A4E44"/><path d="M100 173.5q-2.6 3.2-5.6 1.6M100 173.5q2.6 3.2 5.6 1.6" stroke="#4A2C24" stroke-width="1" fill="none" stroke-linecap="round"/></g></g><ellipse cx="160" cy="130" rx="4.6" ry="3.4" transform="rotate(-20 160 130)" fill="#489090"/><path d="M164 129V110q6 3 7 10" stroke="#489090" stroke-width="1.6" fill="none" stroke-linecap="round"/><ellipse cx="184" cy="100" rx="4.6" ry="3.4" transform="rotate(-20 184 100)" fill="#D98AA2"/><path d="M188 99V80q6 3 7 10" stroke="#D98AA2" stroke-width="1.6" fill="none" stroke-linecap="round"/><ellipse cx="150" cy="86" rx="4.6" ry="3.4" transform="rotate(-20 150 86)" fill="#489090"/><path d="M154 85V66" stroke="#489090" stroke-width="1.6" fill="none" stroke-linecap="round"/><g transform="translate(46 82)"><path d="M-3 -1C-10 -9 -18 -7 -20 -3C-14 -3 -9 -1 -3 1Z" fill="#F4EFE2"/><path d="M3 -1C10 -9 18 -7 20 -3C14 -3 9 -1 3 1Z" fill="#F4EFE2"/><path d="M-3 -1C-10 -9 -18 -7 -20 -3" stroke="#D9CFB8" stroke-width=".8" fill="none"/><path d="M3 -1C10 -9 18 -7 20 -3" stroke="#D9CFB8" stroke-width=".8" fill="none"/><circle r="4.6" fill="#E4BA4E"/><circle cx="-1.4" cy="-1.6" r="1.4" fill="#F6E3A6"/></g><path d="M214 25Q215.1 28.9 219 30Q215.1 31.1 214 35Q212.9 31.1 209 30Q212.9 28.9 214 25Z" fill="#E4AEC0"/><path d="M118 50.5Q118.8 53.2 121.5 54Q118.8 54.8 118 57.5Q117.2 54.8 114.5 54Q117.2 53.2 118 50.5Z" fill="#C0DED8"/><path d="M30 192.5Q30.8 195.2 33.5 196Q30.8 196.8 30 199.5Q29.2 196.8 26.5 196Q29.2 195.2 30 192.5Z" fill="#E4AEC0"/><path d="M282 146.5Q282.8 149.2 285.5 150Q282.8 150.8 282 153.5Q281.2 150.8 278.5 150Q281.2 149.2 282 146.5Z" fill="#B4D8D2"/><g stroke="#489090" stroke-width="1.6" stroke-linecap="round"><path d="M38 110h6M41 115h4"/></g></svg><figcaption>Molly<span>Catherine's, keyboard and guitar included</span></figcaption></figure>
+          </div>
+          <div class="m">Residents so far: three cats, one dachshund, five humans, one guitar, one keyboard. And, down in the basement, spiders beyond counting.</div>
+        </div>
+        <div class="floor reveal" data-f="1">
+          <div class="lvl">First floor &amp; terrace</div>
+          <h3>The wine bar</h3>
+          <p>Wine, coffee, cookies, cheese and a sun-trap terrace. No wifi, on purpose. Reviewers call it “cosy” more than anything else.</p>
+          <p><q>The wine bar upstairs has a great menu and you can tell the whole operation is run with love and care.</q></p>
+          <div class="m">179 mention wine · 56 coffee &amp; tea · 36 the terrace</div>
+        </div>
+        <div class="floor reveal" data-f="2">
+          <div class="lvl">Ground floor</div>
+          <h3>The bookshop</h3>
+          <p>Wooden shelves to the ceiling, ladders, chandeliers, special editions and handwritten staff picks. Famous for the best English selection in Belgium.</p>
+          <p><q>Walking through this store is like walking through a fey portal and forgetting time and space for a moment.</q></p>
+          <div class="m">128 praise the selection · 72 mention English books · 82 call it beautiful</div>
+        </div>
+        <div class="floor reveal" data-f="3">
+          <div class="lvl">Basement</div>
+          <h3>Children's &amp; YA</h3>
+          <p>The secret downstairs that visitors love to tell each other about. Also a known hideout for readers when the bar gets lively.</p>
+          <p><q>If you visit, be sure to take the stairs down to the YA/children's section.</q></p>
+          <div class="m">14 reviews send people downstairs</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quotes" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-h reveal"><h2><span class="no">Chapter 4</span>A Commonplace Book</h2><p>As readers once copied their favourite lines into a notebook: the most quotable reviews, picked by hand. Filter by what they're about.</p></div>
+    <div class="filters" id="filters"></div>
+    <div class="wall" id="wall"></div>
+  </div>
+</section>
+
+<section class="plate" id="interlude">
+  <div class="wrap">
+    <div class="dip">
+      <div class="reveal">
+        <span class="no">An interlude</span>
+        <h2 class="foil">A bookmark from the stacks</h2>
+        <p>Every reviewer gets the anniversary-bookmark treatment: one review at random, foiled in brass. Go on, take another. They're half price with a book.</p>
+        <button class="btn" id="dipbtn">Pull another bookmark ↻</button>
+      </div>
+      <div class="bookmark frame" id="bookmark" aria-live="polite">
+        <div class="ch" id="bm-ch">Review</div>
+        <div><div class="tx" id="bm-tx"></div><div class="by" id="bm-by"></div></div>
+        <div class="sig">Luddites<i>Books &amp; Wine</i></div>
+        <span class="bm-gloss" aria-hidden="true"><i id="bm-sheen"></i></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="editions">
+  <div class="wrap">
+    <div class="sec-h reveal"><h2><span class="no">Chapter 5</span>Bound in Green and Brass</h2><p>Two classics, reprinted in the shop's own green cloth and brass foil, with the same border as the bookmarks.</p></div>
+    <div class="eds">
+      <article class="ed reveal">
+        <div class="ph"><img src="assets/dorian-gray.webp" alt="The Picture of Dorian Gray, Luddites special edition in green cloth with gold foil border, beside a candle" loading="lazy"></div>
+        <div class="bd">
+          <span class="tag">On the shelf · €24.95</span>
+          <h3 style="margin-top:12px">The Picture of Dorian Gray</h3>
+          <div class="au">Oscar Wilde</div>
+          <p>A handsome hardback in the shop's dark green with gold foiling, “to match the colours of our bookstore”, with an introduction by co-founder Richard Bolte.</p>
+          <p>A novel later used as evidence against Wilde at the Old Bailey, which is exactly the kind of fact this shop loves.</p>
+        </div>
+      </article>
+      <article class="ed reveal">
+        <div class="ph"><img src="assets/pride-and-prejudice.webp" alt="Pride and Prejudice, Luddites special edition in green cloth with gold foil border, on marble" loading="lazy"><div class="stamp">Offline only</div></div>
+        <div class="bd">
+          <span class="tag">Gone from the digital shelves</span>
+          <h3 style="margin-top:12px">Pride &amp; Prejudice</h3>
+          <div class="au">Jane Austen</div>
+          <p>It has quietly left the webshop, but not the shelves: you'll find it at Hopland 34, which is exactly how a Luddite would want it.</p>
+          <div class="heart">And it's one of your three favourite books. It is a truth universally acknowledged that a reader in want of a good edition must come to the shop in person.</div>
+        </div>
+      </article>
+    </div>
+    <div class="edq">
+      <blockquote class="reveal">Gorgeous bookshop with a good range of English language books &amp; gorgeous special editions.<cite>Karina C. · 5★ · 6 months ago</cite></blockquote>
+      <blockquote class="reveal">They also have a lot of special edition covers that you can't find in other stores.<cite>Solhanne T. · 5★ · 2 months ago</cite></blockquote>
+      <blockquote class="reveal">Paradise for book lovers who want to discover a beautiful edition of a favorite classic over a drink.<cite>Hakan B. · 5★ · 4 years ago</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="plate" id="menu">
+  <div class="wrap">
+    <div class="sec-h reveal"><h2><span class="no">Chapter 6</span>A Moveable Feast</h2><p>Everything guests singled out by name, written up like the wine list.</p></div>
+    <div class="g2">
+      <div class="menu-box reveal">
+        <svg class="vig" viewBox="0 0 360 130" role="img" aria-label="Pen drawing of a Luddites coffee cup, a stack of chocolate chip cookies and a jar of jam">
+          <g fill="none" stroke="#EFE6D0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 118H148M160 118H338" opacity=".7"/><path d="M50 123h22M196 123h34M284 123h20" opacity=".35"/>
+            <path d="M72 62q-5-6 0-11t0-11M81 60q-5-6 0-11t0-11M90 62q-5-6 0-11t0-11" opacity=".55"/>
+            <ellipse cx="80" cy="110" rx="36" ry="6" fill="#16432E"/><path d="M52 111q28 4 56 0" opacity=".45"/>
+            <path d="M101 79q13-1 12.5 9t-14.5 8" /><path d="M100.5 83q7 0 7 5t-9 5" opacity=".6"/>
+            <path d="M58 72q1 28 13 33h18q12-5 13-33" fill="#16432E"/><ellipse cx="80" cy="72" rx="22" ry="4.5" fill="#16432E"/>
+            <path d="M62 73.5q18 4 36 0" opacity=".45"/><path d="M95 79q-.5 13-5 22M98.5 78q-.5 12-4 19" opacity=".5"/>
+            <g stroke="#D2B373" stroke-width=".9"><rect x="74" y="84" width="12" height="12"/><path d="M80 84v12M74 90h12"/></g>
+            <ellipse cx="190" cy="110" rx="42" ry="7" fill="#16432E"/><path d="M156 111q34 5 68 0" opacity=".45"/>
+            <path d="M170 100v4q20 9 40 0v-4" fill="#16432E"/><ellipse cx="190" cy="100" rx="20" ry="5" fill="#16432E"/>
+            <path d="M169 92v4q19 8 38 0v-4" fill="#16432E"/><ellipse cx="188" cy="92" rx="19" ry="5" fill="#16432E"/>
+            <path d="M173 84v4q18 8 36 0v-4" fill="#16432E"/><ellipse cx="191" cy="84" rx="18" ry="4.6" fill="#16432E"/>
+            <g fill="#D2B373" stroke="none"><circle cx="184" cy="83.5" r="1.5"/><circle cx="194" cy="85.5" r="1.2"/><circle cx="199" cy="82.5" r="1.2"/><circle cx="188" cy="81.5" r="1"/><circle cx="178" cy="94.5" r="1.1"/><circle cx="200" cy="96.5" r="1.2"/><circle cx="183" cy="104.5" r="1.1"/><circle cx="203" cy="104" r="1"/><circle cx="216" cy="113" r=".9"/><circle cx="163" cy="114" r=".8"/></g>
+            <path d="M270 75h36q3 0 3 4v24q0 7-7 7h-28q-7 0-7-7V79q0-4 3-4z" fill="#16432E"/>
+            <rect x="268" y="66" width="40" height="9" rx="2" fill="#16432E"/><path d="M274 67.5v6M280 67.5v6M286 67.5v6M292 67.5v6M298 67.5v6M304 67.5v6" opacity=".5" stroke-width="1"/>
+            <path d="M271 80h34" opacity=".3"/><path d="M302 81v22M305 83v18" opacity=".5"/>
+            <rect x="276" y="85" width="24" height="15" rx="1.5" stroke="#D2B373" stroke-width="1"/>
+            <text x="288" y="96" text-anchor="middle" font-family="Alegreya" font-style="italic" font-size="10" fill="#D2B373" stroke="none">jam</text>
+          </g>
+        </svg>
+        <div class="menu">
+        <div class="it"><span class="nm">The chocolate chip cookie</span><span class="dots"></span><span class="pr">“to die for”</span><span class="ds">“The best chocolate chip cookie.” Also: “being met by the smell of new books and baked cookies.”</span></div>
+        <div class="it"><span class="nm">Orange wine</span><span class="dots"></span><span class="pr">“try the natural one”</span><span class="ds">Recommended by name three times, the house favourite among reviewers.</span></div>
+        <div class="it"><span class="nm">Cheese &amp; crackers with jam</span><span class="dots"></span><span class="pr">“delicious”</span><span class="ds">Best enjoyed on the terrace, in the sun, according to several witnesses.</span></div>
+        <div class="it"><span class="nm">Hummus</span><span class="dots"></span><span class="pr">“always top-notch”</span><span class="ds">Olives too. “Delicious wine and olives” is a whole review.</span></div>
+        <div class="it"><span class="nm">Gluten-free matcha cake</span><span class="dots"></span><span class="pr">“really nice”</span><span class="ds">With white chocolate. Plus chai latte with oat milk, and “plant-based milk available”.</span></div>
+      </div></div>
+      <div class="menu-box reveal">
+        <svg class="vig" viewBox="0 0 360 130" role="img" aria-label="Pen drawing of two wine glasses and a bottle standing on a stack of Luddites books">
+          <g fill="none" stroke="#EFE6D0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 118H146M154 118H338" opacity=".7"/><path d="M44 123h20M180 123h40M300 123h18" opacity=".35"/>
+            <g transform="rotate(-8 56 113)"><rect x="46" y="108" width="20" height="10" rx="3" fill="#16432E"/><path d="M51 111.5h.1M56 114h.1M61 111h.1M53 115.5h.1" stroke-width="1.6" opacity=".6"/></g>
+            <path d="M94 58q0 30 16 32q16-2 16-32" fill="#16432E"/><ellipse cx="110" cy="58" rx="16" ry="3"/>
+            <path d="M95.5 70q14.5 3 29 0" stroke="#D2B373"/><path d="M97.5 75h25M99.5 80h21M102.5 85h15" stroke="#D2B373" stroke-width="1" opacity=".8"/>
+            <path d="M99 62q0 9 2.5 15" opacity=".6"/><path d="M110 90v20"/><ellipse cx="110" cy="113" rx="13" ry="3.2" fill="#16432E"/>
+            <rect x="150" y="100" width="140" height="16" rx="2" fill="#16432E"/><path d="M162 100v16M168 100v16M272 100v16M278 100v16" opacity=".55"/><path d="M200 108h40" stroke="#D2B373"/>
+            <rect x="162" y="86" width="118" height="14" rx="2" fill="#16432E"/><path d="M172 86v14M270 86v14" opacity=".55"/>
+            <path d="M207 86V48q0-9 9-13V20h10v15q9 4 9 13v38z" fill="#16432E"/>
+            <path d="M215 20h12M216 26h10M216 30h10" opacity=".7"/><path d="M211 50v18" opacity=".55"/><path d="M230.5 50v34M233.5 53v30" opacity=".5"/>
+            <rect x="210" y="54" width="22" height="20" rx="1.5" stroke="#D2B373" stroke-width="1"/>
+            <path d="M216.5 58.5q0 6 4.5 7q4.5-1 4.5-7zM221 65.5v4M218.5 69.5h5" stroke="#D2B373" stroke-width=".9"/>
+            <text x="255" y="95.5" text-anchor="middle" font-family="Alegreya" font-size="7.5" fill="#D2B373" stroke="none" letter-spacing=".5">LUDDITES</text>
+            <path d="M306 62q0 28 14 30q14-2 14-30" fill="#16432E"/><ellipse cx="320" cy="62" rx="14" ry="2.8"/>
+            <path d="M309.5 66q0 9 3 15" opacity=".6"/><path d="M320 92v18"/><ellipse cx="320" cy="113" rx="12" ry="3" fill="#16432E"/>
+          </g>
+        </svg>
+        <div class="menu">
+        <div class="it"><span class="nm">A Riesling</span><span class="dots"></span><span class="pr">“incredible”</span><span class="ds">Came with a photo as evidence.</span></div>
+        <div class="it"><span class="nm">“Even a Slovenian one!”</span><span class="dots"></span><span class="pr">by the glass</span><span class="ds">Along with English and Belgian wines that surprised more than one visitor.</span></div>
+        <div class="it"><span class="nm">Bubbly mulled wine</span><span class="dots"></span><span class="pr">winter</span><span class="ds">Drunk on the terrace in a “Dickens-style living room library”.</span></div>
+        <div class="it"><span class="nm">The story behind the label</span><span class="dots"></span><span class="pr">free</span><span class="ds">“The interesting facts accompanying the wines are greatly appreciated.”</span></div>
+        <div class="it"><span class="nm">Half off a glass with a book</span><span class="dots"></span><span class="pr">11 mentions</span><span class="ds">The most-quoted deal in Antwerp. “Win win.”</span></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section id="marginalia">
+  <div class="wrap">
+    <div class="sec-h reveal"><h2><span class="no">Chapter 7</span>Marginalia</h2><p>A handful of notes in pencil. Out of 657 reviews, these are the only recurring wishes.</p></div>
+    <div class="margin">
+      <div class="mn reveal"><h4>It's gotten popular <small>13 reviews</small></h4><p>Busy weekends, a lively bar, and seats that are hard to find after 2 pm. A few readers miss the quiet.</p><div class="idea">Readers already know the basement is the quiet escape.</div></div>
+      <div class="mn reveal"><h4>The gift voucher fine print <small>1 review</small></h4><p>One visitor didn't know the voucher only works downstairs. It isn't printed on the card.</p><div class="idea">One extra line on the voucher would fix it.</div></div>
+      <div class="mn reveal"><h4>A gluten-free nibble <small>1 wish</small></h4><p>“The only thing that would make it even better is if there would be at least one gluten free option.”</p><div class="idea">Someone else already loved the GF matcha cake, so it has been done.</div></div>
+      <div class="mn reveal"><h4>Stairs &amp; budgets <small>a few reviews</small></h4><p>The bar is upstairs, which is hard for some. A couple of people find the wine a bit pricey (“about €7 a glass, not really expensive either”).</p><div class="idea">The half-price-with-a-book deal is the best answer to this one.</div></div>
+    </div>
+    <p class="note" style="margin-top:20px">Only one of the 657 reviews has an owner reply so far. Plenty of lovely people out there who'd be thrilled to hear back from the Luddites.</p>
+  </div>
+</section>
+
+<div class="wrap divider"><div class="foil-rule c"></div></div>
+
+<section id="beyond">
+  <div class="wrap">
+    <div class="sec-h reveal"><h2><span class="no">Chapter 8</span>Our Mutual Friends</h2><p>Where the conspiracy recruits, one follower at a time.</p></div>
+    <div class="soc">
+      <div class="card reveal"><h3>Instagram</h3><p class="sub">@ludditesantwerp</p><div class="v">15.4k</div><p>followers for the shop cat, Halloween in costume, special editions and Sip &amp; Shop evenings.</p></div>
+      <div class="card reveal"><h3>TikTok</h3><p class="sub">@luddites.antwerp</p><div class="v">32.7k</div><p>likes. The hit: <i>“Tag the person who owes you a book”</i>, 71.7k views. Runner-up: a team-building trip to the bouldering gym. One employee lost to an ankle, the snack supply decimated.</p></div>
+      <div class="card reveal"><h3>The Book Club</h3><p class="sub">since 27 April 2023</p><div class="v">No. 36</div><p>Next up: <i>The Zorg</i>, 3 and 4 December. From <i>Bunny</i> (“bonkers, come prepared”) to <i>Piranesi</i>, the whole shelf is in <a href="#bookclub">Chapter 9</a>. A reviewer calls it worth “more than 5 stars”.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="bookclub">
+  <div class="wrap">
+    <div class="sec-h reveal"><h2><span class="no">Chapter 9</span>If on a Thursday Night a Reader</h2><p>Every book the Luddites Book Club has read, from No.&nbsp;1 in April 2023 to No.&nbsp;36, still to come. Hover or tap a spine.</p></div>
+    <div class="bc-stats reveal">
+      <div class="tile"><div class="v">36</div><div class="l">books since April 2023, nearly one a month</div></div>
+      <div class="tile"><div class="v">5</div><div class="l">book clubs so popular they got a second night</div></div>
+      <div class="tile"><div class="v">~2,700</div><div class="l">years between the oldest pick (Homer) and the newest</div></div>
+    </div>
+    <div class="bc-grid">
+      <div class="shelves reveal" id="shelves" role="group" aria-label="The book club shelf"></div>
+      <aside class="card-wrap reveal">
+        <div class="catcard" id="catcard" aria-live="polite">
+          <div class="cc-top"><span id="cc-no"></span><span id="cc-date"></span></div>
+          <div class="cc-rule"></div>
+          <div id="cc-body">
+            <h3 class="cc-t" id="cc-t"></h3>
+            <div class="cc-a" id="cc-a"></div>
+            <div class="cc-k" id="cc-k"></div>
+            <p class="cc-l" id="cc-l"></p>
+          </div>
+          <div class="cc-stamp" id="cc-stamp" hidden>Up next</div>
+          <div class="cc-hole" aria-hidden="true"></div>
+        </div>
+      </aside>
+    </div>
+    <div class="bc-legend reveal" id="bc-legend"></div>
+  </div>
+</section>
+
+<section id="story" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-h reveal"><h2><span class="no">Chapter 10</span>Remembrance of Things Past</h2><p>The reviews read like a diary of the place.</p></div>
+    <div class="tl">
+      <div class="e reveal"><div class="d">October 2018</div><h4>One dark and stormy night</h4><p>In the shop's own words, Luddites was “dreamed up by Richard Bolte and Jorien Caers on one dark, stormy night”, followed by months of planning, renovating and swearing off paint cans for good.</p></div>
+      <div class="e reveal"><div class="d">5 March 2020</div><h4>The doors open on Hopland</h4><p>“The new hotspot for book- and wine lovers in the city centre of Antwerp.” Less than two weeks later, Belgium goes into lockdown.</p></div>
+      <div class="e reveal"><div class="d">2020–2021</div><h4>Waiting for the bar to reopen</h4><p>“I can't wait until the wine bar is allowed to reopen 📚🍷.” Even so: 86 reviews in the first two years, averaging 4.9.</p></div>
+      <div class="e reveal"><div class="d">2022</div><h4>The word gets out</h4><p>Reviews more than double to 100 in a single year. “Shakespeare &amp; co. of Antwerp (or maybe even better).”</p></div>
+      <div class="e reveal"><div class="d">2023</div><h4>The busiest year for reviews, and a Book Club is born</h4><p>133 reviews. <i>Bunny</i> kicks off the Book Club, with matching tattoos and a secret code promised.</p></div>
+      <div class="e reveal"><div class="d">2024</div><h4>A favourite, with friends calling it <button class="lulu" id="lulu" type="button" aria-expanded="false" aria-controls="clubhouse">“Lulu”</button></h4><p>116 more reviews. Staff picks, Billie, the cookie, the terrace, Candlelit Christmas.</p><div class="clubhouse" id="clubhouse" hidden><span class="psst">Psst.</span><p>Guests may call it Lulu. True Hoplanders call it <em>the clubhouse</em>.</p><p class="said">“I’ll meet you at the clubhouse.” <span>·</span> “Who’ll be at the clubhouse later?” <span>·</span> “I’ll bring it to the clubhouse.”</p><div class="who">as Kenrick would say</div></div></div>
+      <div class="e reveal"><div class="d">5 March 2025</div><h4>The Fifth Anniversary</h4><p>Celebrated with black bookmarks foiled in brass, the logo's glass-and-pages border running all the way round.</p>
+        <div class="anniv">
+          <div class="bms"><img src="assets/bookmark-front.jpg" alt="Fifth anniversary bookmark, front: The Fifth Anniversary, Luddites Books & Wine, 05.03.2025" loading="lazy"><img src="assets/bookmark-back.jpg" alt="Fifth anniversary bookmark, back: Chapter 5" loading="lazy"></div>
+          <blockquote>“…and merry staff full of wonder at whether you are going to buy that book or get out.”<cite>Chapter 5, on the back of the bookmark</cite></blockquote>
+        </div>
+      </div>
+      <div class="e reveal"><div class="d">5 March 2026</div><h4>Six years on Hopland</h4><blockquote class="nl">“It all goes by so fast. And it's really lovely that we've managed to build a real community, without a single euro of subsidy.”<cite>Jorien, on turning six</cite></blockquote><p>The same month the shop launched Laura Buelinckx's <i>Mixtape</i> (18 March) and the Book Club took on <i>Frankenstein</i> (19 March).</p></div>
+      <div class="e reveal"><div class="d">This week</div><h4>Still glowing</h4><p>Two days ago: “Enjoying a good read with a cup of tea and coffee, ideal spot!” A day ago: “The bookstore is soulful.”</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="plate letter-sec" id="epilogue">
+  <div class="wrap">
+    <div class="epi reveal"><span class="no">Epilogue</span><div class="foil-rule"></div></div>
+    <div class="letter reveal">
+      <button class="dog-btn" id="dog" type="button" aria-label="Say hello to the dachshund"><img class="dog" src="assets/dachshund.png" alt="Illustration of a dachshund in a red scarf reaching for a bottle of bubbles on a stack of books, Pride & Prejudice and Dorian Gray among them" loading="lazy"></button>
+      <p>Liefje,</p>
+      <p class="dc">Six and a half years ago you and Richard opened a door on Hopland and invited the city into a hideout from the modern world. Since then 657 strangers have gone home and written about it, and when you read them all in one sitting a pattern appears. They don't just praise the books or the wine. They talk about how it <i>felt</i>: welcome, warm, unhurried, a little bit enchanted.</p>
+      <p>“Friendly”, “kind” or “welcoming” turn up in 64 reviews. “Cosy” in 57. Somebody wrote that they want to live there, and somebody else that the place made them want to open their own. Those words are about you, and Richard, and Isa, and the whole team.</p>
+      <p>I'm so proud of you. (And a belated happy birthday to Richard. The 4.9 is your present too.)</p>
+      <div class="sig">Stijn</div>
+    </div>
+  </div>
+</section>
+
+<footer class="plate" style="padding-top:10px">
+  <div class="wrap">
+    <div class="foil-rule" style="margin-bottom:40px"></div>
+    <svg class="logo" viewBox="0 0 1200 1200" aria-hidden="true" style="color:#F4EEDF">
+      <use href="#mark"/>
+      <use href="#logo-words"/>
+    </svg>
+    <div class="motto foil">Be there or be haunted by regret.</div>
+    <div class="colophon">
+      <div class="h">Colophon</div>
+      <p>Set in Alegreya, Merriweather and DM Sans. Printed from all 657 Google reviews of Luddites Books &amp; Wine, collected on 24 October 2026, and bound in Luddites green and brass. An edition of one, for Jorien.</p>
+      <p class="fine">Theme counts are keyword matches across the 345 written reviews; reviewer names are shortened.</p>
+      <div class="fin">Fin.</div>
+    </div>
+  </div>
+</footer>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<nav aria-label="Chapter bookmarks"><ol class="ribbons" id="ribbons"></ol></nav>
+
+<div class="mribbon-wrap"><button class="mribbon" id="mribbon" aria-haspopup="dialog" aria-label="Open the contents"><span class="mrk" id="mr-k">Contents</span><span class="mrn" id="mr-n">❧</span></button></div>
+
+<dialog class="sheet-dlg" id="sheet" aria-labelledby="sheet-h">
+  <div class="sheet frame-c">
+    <button class="x" id="sheet-x" aria-label="Close the contents">×</button>
+    <h2 class="toc-h" id="sheet-h">Contents</h2>
+    <p class="sh-sub">Turn to any chapter</p>
+    <ol class="toc" id="toc-sheet"></ol>
+  </div>
+</dialog>
+
+<div id="tip" role="tooltip"></div>
+
+<script>
+const STARS=[[5,578],[4,73],[3,4],[2,0],[1,2]];
+const YEARS=[[2020,45,4.91],[2021,41,4.93],[2022,100,4.87],[2023,133,4.83],[2024,116,4.85],[2025,128,4.86],[2026,94,4.88]];
+const THEMES=[["Wine",179],["Book selection",128],["Staff & service",104],["Beautiful interior",82],["Friendly & kind",79],["English books",72],["Cosy",57],["Coffee & tea",56],["Mentions Antwerp",46],["Terrace & sunshine",36],["Dutch books",28],["Hidden gem & escape",27],["“My favourite”",25],["Cookies, cake & cheese",24],["Kids' basement",14],["Busy or loud",13],["Magic & heaven",11],["The 50% deal",11],["Staff picks",9]];
+const WORDS=[["wine",179],["books",188],["bookstore",145],["selection",91],["great",84],["English",72],["beautiful",62],["cozy",57],["staff",55],["friendly",53],["coffee",51],["Antwerp",46],["upstairs",45],["lovely",43],["recommend",38],["amazing",26],["favourite",25],["terrace",21],["atmosphere",19],["relax",15],["interior",13],["hidden",11],["vibe",11],["wonderful",11],["gem",9],["charming",7],["gorgeous",7],["welcoming",7],["cookie",6],["cheese",6],["quiet",6],["calm",5],["sweet",5],["orange wine",3],["heaven",3],["magical",2],["bliss",2],["ladders",2]];
+const Q=[
+ {t:"Shakespeare & co. of Antwerp ❤️ (or maybe even better)",n:"Mateusz R.",s:5,w:"4 years ago",c:["books"],big:1},
+ {t:"This place is as close to perfect as I can imagine: beautiful shelves with ladders, calming music, cozy and clean bar. Oh, and they sell books too, I guess.",n:"Anne I.",s:5,w:"5 months ago",c:["place","funny"]},
+ {t:"Bookstores are basically art galleries filled with stories. And if that's true, then there is no better place in Antwerp to marvel at the beauty of the books than Luddites.",n:"Kat",s:5,w:"5 years ago",c:["books","place"]},
+ {t:"If I had the option to give six stars, I would do it. The sommelier even told us the story behind the label of one of the wines.",n:"Daniel B.",s:5,w:"6 years ago",c:["wine","people"]},
+ {t:"Walking through this store is like walking through a fey portal and forgetting time and space for a moment. Their coffee makes me forget rainy days!",n:"Morgane V.",s:5,w:"3 years ago",c:["place","coffee"],big:1},
+ {t:"I want to live here.",n:"Lennert H.",s:5,w:"6 years ago",c:["place","funny"],big:1},
+ {t:"Brilliant selection of literature. Does the friendly bookseller also sell 'reading time'?",n:"Koen T.",s:4,w:"4 years ago",c:["books","funny"]},
+ {t:"Today, once again, I received incredibly great service from the fantastic Billie. Billie and the whole team are ready to help you with flawless book recommendations.",n:"Laura",s:5,w:"10 months ago",c:["people"]},
+ {t:"The reviews written on the staff picks are very detailed and a joy to read. I ended up with a wonderful book that I never would have found if not for the review written on the cover.",n:"Samara P.",s:5,w:"a year ago",c:["books","people"]},
+ {t:"My friends call this place “Lulu”?! It's often hard to find a seat after 2 PM, so you have to win the game of “guessing the crowd” haha.",n:"서재",s:5,w:"a year ago",c:["funny","place"]},
+ {t:"Step inside and feel the cosiness and the jazzy atmosphere landing on your shoulders as a nice, warm blanket.",n:"Dorien V.",s:5,w:"6 years ago",c:["place"],big:1},
+ {t:"My wife is the bibliophile and she was made up with this place. They had me at “wine terrace”.",n:"Sean J.",s:5,w:"a year ago",c:["wine","funny"]},
+ {t:"Makes me want my own books & wine shop. Absolutely wonderful.",n:"Colinda v.",s:5,w:"a year ago",c:["place"]},
+ {t:"Being met by the smell of new books and baked cookies was such a delight on our Sunday morning visit!",n:"Jon K.",s:5,w:"4 years ago",c:["coffee","place"]},
+ {t:"The girls working there are such sweethearts. The place is heavenly.",n:"Sakshi S.",s:5,w:"a year ago",c:["people"]},
+ {t:"For a moment, you'll feel like you're in a Harry Potter bookstore.",n:"Kris D.",s:5,w:"2 years ago",c:["place","books"]},
+ {t:"To my surprise, the books were beautifully gift wrapped. The attention to detail is superb. This was my first order and definitely not my last.",n:"Ingrid S.",s:5,w:"9 months ago",c:["people","books"]},
+ {t:"Super nice bookstore and incredibly sweet staff. They insisted on applying a discount because one of the books I bought was a bit dirty! :)",n:"Enrique V.",s:5,w:"a year ago",c:["people"]},
+ {t:"Lovely quiet spot and completely in Luddites style: nope, no wifi 😁 Books & Wine is all you need.",n:"Olivier C.",s:5,w:"a year ago",c:["place","funny"]},
+ {t:"A pocket of calm hidden in bustling Antwerp. An all round escape from the world where comfort is ever-present.",n:"Catherine C.",s:5,w:"4 years ago",c:["place"]},
+ {t:"The books 🤌 the wine 🤌 the service 🤌",n:"Matthijs D.",s:5,w:"2 years ago",c:["wine","books","people"],big:1},
+ {t:"Particularly difficult not to return home with three books or so and a bottle of wine. ;-)",n:"Gerrit J.",s:5,w:"5 years ago",c:["books","wine","funny"]},
+ {t:"The owner's handwritten book recommendations provide a personal touch. In the summer, there is a sun-drenched terrace!",n:"Flore S.",s:5,w:"6 years ago",c:["people","books"]},
+ {t:"Love that while they have many options for mainstream books, they also have a lot of lesser-known ones (less than a thousand Goodreads ratings) to discover.",n:"Evelyn",s:5,w:"11 months ago",c:["books"]},
+ {t:"Gorgeous bookshop with a good range of English language books & gorgeous special editions.",n:"Karina C.",s:5,w:"6 months ago",c:["books"]},
+ {t:"The cookie is to die for! Staff is lovely.",n:"Rochelle S.",s:5,w:"2 years ago",c:["coffee","people"]},
+ {t:"Bookshop with wine. What's not to like?",n:"Felicity M.",s:5,w:"11 months ago",c:["wine","funny"]},
+ {t:"Very pleasant atmosphere, a kind of Dickens-style living room library, bowls of cookies, drank delicious bubbly mulled wine on the terrace.",n:"Arturo S.",s:5,w:"10 months ago",c:["wine","place"]},
+ {t:"Supremely elegant indie bookshop, with a supremely elegant selection. Oh, and wine upstairs, and coffee.",n:"Philip G.",s:5,w:"6 years ago",c:["books","wine"]},
+ {t:"My husband and I always go here on dates; first we enjoy shopping for books and then read upstairs with wine and a treat.",n:"Gwen E.",s:5,w:"a year ago",c:["wine","place"]},
+ {t:"Great book selection, friendly owners and yummy wines. Update: still great 😊 and dog friendly.",n:"Christina K.",s:5,w:"3 years ago",c:["people","wine"]},
+ {t:"Super friendly staff, who exude calm even when it is very busy. Last but not least, there is a bookstore!!!",n:"Julie B.",s:5,w:"4 years ago",c:["people","funny"]},
+ {t:"We had a monthly book club here in the cozy bar upstairs. Friendly staff and delicious coffees make this worth more than 5 stars!",n:"j. w.",s:5,w:"10 months ago",c:["people","coffee"]},
+ {t:"Bonus points for the lovely staff and cute dog.",n:"Ava",s:5,w:"11 months ago",c:["people","funny"]},
+ {t:"Nice and pink 😉",n:"Dirk T.",s:4,w:"3 years ago",c:["funny"]},
+ {t:"Coolest bookstore and wine bar in town! I never leave without buying something. 🥂 (xoxo the Lushies)",n:"Kimberley S.",s:5,w:"4 years ago",c:["funny","wine"]},
+ {t:"This is my new go-to for English books. I particularly like the staff picks; they also have a lot of special edition covers that you can't find in other stores.",n:"Solhanne T.",s:5,w:"2 months ago",c:["books"]},
+ {t:"Kids books are in the basement, English books on the main level and a wine bar on top. Our daughter fell in love.",n:"Austin G.",s:5,w:"2 years ago",c:["books"]},
+ {t:"What a lovely place! The bookstore is soulful and the wine bar has a great selection of wine. I took the recommendation for Fall and I wasn't disappointed.",n:"Niharika S.",s:5,w:"a day ago",c:["wine","books"]},
+ {t:"The interesting facts accompanying the wines are greatly appreciated! A hidden gem in the heart of Antwerp.",n:"Kenrick D.",s:5,w:"a year ago",c:["wine"]},
+ {t:"Try the natural orange wine ❤️",n:"Daan J.",s:5,w:"3 years ago",c:["wine"]},
+ {t:"Every book lover's heart beats faster here.",n:"Shamina B.",s:5,w:"a year ago",c:["place"]},
+ {t:"A broad selection of English, Belgian and Dutch books. Children's books have their own floor. Upstairs you can enjoy wines and coffee.",n:"A certain Stijn V. (reviewer since day one)",s:5,w:"6 years ago",c:["books"]}
+];
+const CATS=[["all","Everything"],["books","The books"],["wine","The wine"],["coffee","Coffee & cookies"],["people","The people"],["place","The place"],["funny","The witty ones"]];
+const $=s=>document.querySelector(s);
+const root=document.documentElement;
+const isDark=()=>(root.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'))==='dark';
+
+/* the bookmark border: glass-and-pages cells, as a 4x4 SVG border-image */
+function cellPages(x,y){return `M${x} ${y}A10 20 0 0 1 ${x+10} ${y+20}M${x+20} ${y}A10 20 0 0 0 ${x+10} ${y+20}M${x} ${y+10}A10 10 0 0 1 ${x+10} ${y+20}M${x+20} ${y+10}A10 10 0 0 0 ${x+10} ${y+20}`}
+function cellGlass(x,y){return `M${x} ${y}A10 10 0 0 0 ${x+20} ${y}M${x+10} ${y+10}V${y+20}`}
+function svgUrl(svg){return `url("data:image/svg+xml,${encodeURIComponent(svg)}")`}
+function frameSVG(c){
+  const cells={'0,0':'p','3,0':'p','0,3':'p','3,3':'p','1,0':'g','2,0':'p','1,3':'g','2,3':'p','0,1':'g','0,2':'p','3,1':'g','3,2':'p'};
+  let d='',r='';
+  for(const k in cells){const [i,j]=k.split(',').map(Number),x=i*20,y=j*20;r+=`<rect x="${x+.5}" y="${y+.5}" width="19" height="19"/>`;d+=cells[k]==='p'?cellPages(x+.5,y+.5):cellGlass(x+.5,y+.5)}
+  return svgUrl(`<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"><g fill="none" stroke="${c}" stroke-width="1.1">${r}<path d="${d}"/></g></svg>`)}
+function ruleSVG(c){return svgUrl(`<svg xmlns="http://www.w3.org/2000/svg" width="40" height="20" viewBox="0 0 40 20"><g fill="none" stroke="${c}" stroke-width="1"><rect x=".5" y=".5" width="19" height="19"/><rect x="20.5" y=".5" width="19" height="19"/><path d="${cellGlass(.5,.5)}${cellPages(20.5,.5)}"/></g></svg>`)}
+function paintFrames(){
+  root.style.setProperty('--frame-g',frameSVG('#C9A865'));
+  root.style.setProperty('--frame-c',frameSVG(isDark()?'#C9A865':'#A88543'));
+  root.style.setProperty('--rule-g',ruleSVG('#C9A865'));
+  root.style.setProperty('--rule-c',ruleSVG(isDark()?'#B8914F':'#A88543'));
+}
+paintFrames();
+/* brass strips: always a whole number of cells, beginning and ending on a closed one */
+function fitRule(el){el.style.width='';const w=el.getBoundingClientRect().width;if(w<20)return;let n=Math.floor(w/20);if(n%2===0)n--;el.style.width=n*20+'px'}
+function fitRules(){document.querySelectorAll('.foil-rule').forEach(fitRule)}
+fitRules();document.fonts&&document.fonts.ready.then(fitRules);
+if(window.ResizeObserver){const ro=new ResizeObserver(es=>es.forEach(e=>e.target.querySelectorAll(':scope>.foil-rule').forEach(fitRule)));document.querySelectorAll('.foil-rule').forEach(el=>ro.observe(el.parentElement))}else addEventListener('resize',fitRules);
+
+/* tooltip */
+const tip=$('#tip');
+function moveTip(e){const x=Math.min(e.clientX+14,innerWidth-tip.offsetWidth-8);tip.style.left=x+'px';tip.style.top=(e.clientY+14)+'px'}
+function bind(el,html){el.addEventListener('mouseenter',e=>{tip.innerHTML=html;tip.classList.add('on');moveTip(e)});el.addEventListener('mousemove',moveTip);el.addEventListener('mouseleave',()=>tip.classList.remove('on'))}
+
+function hbars(el,rows,fmt){
+  const max=Math.max(...rows.map(r=>r[1]));
+  el.innerHTML=rows.map(r=>`<div class="row"><span class="k">${r[0]}</span><span class="t"><span class="f" data-w="${r[1]/max*100}"></span></span><span class="n">${r[1]}</span></div>`).join('');
+  [...el.querySelectorAll('.row')].forEach((row,i)=>bind(row,fmt(rows[i])));
+}
+hbars($('#starbars'),STARS.map(([s,n])=>[`<span class="starkey">${'★'.repeat(s)}<span style="opacity:.25">${'★'.repeat(5-s)}</span></span>`,n]),r=>`<b>${r[1]}</b> reviews · ${(r[1]/657*100).toFixed(1)}%`);
+hbars($('#themes'),THEMES,r=>`<b>${r[0]}</b><br>${r[1]} of 345 written reviews · ${Math.round(r[1]/345*100)}%`);
+
+const ymax=Math.max(...YEARS.map(y=>y[1]));
+$('#years').innerHTML=YEARS.map(([y,n])=>`<div class="col${y===2026?' partial':''}"><span class="lab" style="bottom:${n/ymax*100}%">${n}</span><span class="b" data-h="${n/ymax*100}"></span></div>`).join('');
+$('#yearsx').innerHTML=YEARS.map(y=>`<span>${y[0]}</span>`).join('');
+[...$('#years').children].forEach((c,i)=>{const [y,n,a]=YEARS[i];bind(c,`<b>${y}</b>${y===2026?' (so far)':''}<br>${n} reviews · avg ${a.toFixed(2)}★`)});
+
+const wmax=Math.max(...WORDS.map(w=>w[1]));
+const shuffled=[...WORDS].sort((a,b)=>((a[0].length*7)%5)-((b[0].length*7)%5));
+$('#cloud').innerHTML=shuffled.map(([w,n])=>`<span style="font-size:${15+Math.sqrt(n/wmax)*36}px">${w}</span>`).join('');
+[...$('#cloud').children].forEach((s,i)=>bind(s,`<b>${shuffled[i][0]}</b> · ${shuffled[i][1]} reviews`));
+
+/* the drawing: turn the pen-on-paper scan into Luddites-green ink on a transparent page */
+const bimg=$('#bldg');let bsrc=null;
+function inkify(){
+  if(!bsrc)return;
+  try{
+    const c=document.createElement('canvas');c.width=bsrc.naturalWidth;c.height=bsrc.naturalHeight;
+    const g=c.getContext('2d');g.drawImage(bsrc,0,0);
+    const im=g.getImageData(0,0,c.width,c.height),d=im.data;
+    const [r,gr,b]=isDark()?[226,201,143]:[22,67,46];
+    for(let i=0;i<d.length;i+=4){const L=.3*d[i]+.59*d[i+1]+.11*d[i+2];const a=Math.max(0,Math.min(1,(170-L)/115));d[i]=r;d[i+1]=gr;d[i+2]=b;d[i+3]=a*255}
+    g.putImageData(im,0,0);
+    c.setAttribute('role','img');c.setAttribute('aria-label',bsrc.alt);
+    const old=$('#drawing canvas');if(old)old.replaceWith(c);else bimg.replaceWith(c);
+  }catch(e){/* keep the plain scan */}
+}
+const probe=new Image();probe.onload=()=>{bsrc=probe;probe.alt=bimg.alt;inkify()};probe.src=bimg.getAttribute('src');
+
+/* floors */
+const floors=[...document.querySelectorAll('.floor')],spots=[...document.querySelectorAll('.spot')];
+function pick(i){floors.forEach((f,j)=>f.classList.toggle('on',i===j));spots.forEach((s,j)=>s.classList.toggle('on',i===j))}
+const flat=$('#flat'),lamp=document.querySelector('.lamp'),calm=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
+function upstairs(open){
+  if(open===!flat.hidden)return;
+  spots[0].setAttribute('aria-expanded',String(open));lamp.classList.toggle('off',open);
+  const h=flat.scrollHeight||flat.offsetHeight,fold=[{opacity:0,maxHeight:'0px',marginBottom:'-14px',paddingTop:'0px',paddingBottom:'0px',transform:'translateY(-6px)'},{opacity:1,maxHeight:'1400px',marginBottom:'0px',paddingTop:'20px',paddingBottom:'20px',transform:'none'}];
+  if(open){flat.hidden=false;pick(0);
+    if(flat.animate&&!calm()){flat.style.overflow='hidden';flat.animate(fold,{duration:620,easing:'cubic-bezier(.2,.7,.2,1)'}).onfinish=()=>{flat.style.overflow=''}}
+    if(innerWidth<900)setTimeout(()=>flat.scrollIntoView({behavior:calm()?'auto':'smooth',block:'start'}),calm()?0:120);
+  }else{
+    if(flat.animate&&!calm()){flat.style.overflow='hidden';flat.animate(fold.slice().reverse(),{duration:380,easing:'ease-in'}).onfinish=()=>{flat.hidden=true;flat.style.overflow=''}}else flat.hidden=true;
+    pick(-1);
+  }
+}
+spots.forEach(s=>s.addEventListener('click',()=>{const i=+s.dataset.f;if(i===0)return upstairs(flat.hidden);pick(i);if(innerWidth<900)floors[i].scrollIntoView({behavior:'smooth',block:'center'})}));
+flat.querySelector('.flat-x').addEventListener('click',e=>{e.stopPropagation();upstairs(false);spots[0].focus({preventScroll:true})});
+spots.forEach((s,i)=>s.addEventListener('mouseenter',()=>pick(i)));
+floors.forEach((f,i)=>{f.addEventListener('mouseenter',()=>pick(i));f.addEventListener('click',()=>pick(i))});
+
+/* quote wall */
+let cat='all';
+$('#filters').innerHTML=CATS.map(([k,l])=>`<button class="chip${k==='all'?' on':''}" data-k="${k}">${l}</button>`).join('');
+function renderWall(){
+  const list=Q.filter(q=>cat==='all'||q.c.includes(cat));
+  $('#wall').innerHTML=list.map((q,i)=>`<figure class="q${q.big?' big plate':''}" style="animation-delay:${Math.min(i,12)*35}ms"><p>${q.t}</p><figcaption class="by"><span>${q.n} · ${q.w}</span><span class="s">${'★'.repeat(q.s)}</span></figcaption></figure>`).join('');
+}
+$('#filters').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;cat=b.dataset.k;document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c===b));renderWall()});
+renderWall();
+
+/* bookmark lucky dip */
+let last=-1,turning=false,tilt=2;
+function pickQ(){let i;do{i=Math.floor(Math.random()*Q.length)}while(i===last&&Q.length>1);last=i;return i}
+function fillBookmark(i){const q=Q[i];
+  $('#bm-ch').textContent='Bookmark '+(i+1);
+  $('#bm-tx').textContent=q.t;
+  $('#bm-by').textContent=q.n+' · '+'★'.repeat(q.s)+' · '+q.w}
+function dip(){
+  if(turning)return;
+  const i=pickQ(),bm=$('#bookmark'),parts=['#bm-ch','#bm-tx','#bm-by'].map(s=>$(s));
+  const from=tilt;tilt=+(Math.random()*5-2.5).toFixed(2);bm.style.transform=`rotate(${tilt}deg)`;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!bm.animate){fillBookmark(i);return}
+  turning=true;
+  /* lift the bookmark off the page, let a glint of brass run across, settle at its new angle */
+  bm.animate([{transform:`rotate(${from}deg)`},{transform:`translateY(-14px) rotate(${((from+tilt)/2).toFixed(2)}deg)`,offset:.42},{transform:`rotate(${tilt}deg)`}],{duration:950,easing:'cubic-bezier(.3,.7,.2,1)'});
+  $('#bm-sheen').animate([{transform:'translateX(-120%) skewX(-16deg)',opacity:0},{opacity:1,offset:.35},{transform:'translateX(220%) skewX(-16deg)',opacity:0}],{duration:1100,easing:'cubic-bezier(.45,0,.2,1)'});
+  const outs=parts.map((el,k)=>el.animate([{opacity:1,transform:'none',filter:'blur(0)'},{opacity:0,transform:'translateY(-8px)',filter:'blur(3px)'}],{duration:220,delay:k*45,easing:'ease-in',fill:'forwards'}));
+  Promise.all(outs.map(a=>a.finished)).then(()=>{
+    fillBookmark(i);
+    parts.forEach((el,k)=>{el.getAnimations().forEach(a=>a.cancel());
+      el.animate([{opacity:0,transform:'translateY(10px)',filter:'blur(3px)'},{opacity:1,transform:'none',filter:'blur(0)'}],{duration:480,delay:50+k*80,easing:'cubic-bezier(.2,.7,.2,1)',fill:'backwards'})});
+    setTimeout(()=>{turning=false},560);
+  });
+}
+fillBookmark(pickQ());$('#bookmark').style.transform=`rotate(${tilt}deg)`;
+$('#dipbtn').addEventListener('click',dip);
+
+/* another secret: what the regulars call it */
+$('#lulu').addEventListener('click',()=>{const b=$('#lulu'),n=$('#clubhouse'),open=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(open));n.hidden=!open;if(open&&n.animate&&!matchMedia('(prefers-reduced-motion: reduce)').matches)n.animate([{opacity:0,transform:'rotate(-.6deg) translateY(-6px)',clipPath:'inset(0 0 100% 0)'},{opacity:1,transform:'rotate(-.6deg)',clipPath:'inset(0 0 0 0)'}],{duration:520,easing:'cubic-bezier(.2,.7,.2,1)'})});
+
+/* a secret: poke the dachshund */
+(()=>{
+  const btn=$('#dog'),img=btn.querySelector('img');
+  const words=['Jip!','Jip!','Jip jip!','Jip!','Jiiip!'];
+  btn.addEventListener('click',()=>{
+    const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const w=document.createElement('span');w.className='jip';w.setAttribute('aria-hidden','true');
+    w.textContent=words[Math.floor(Math.random()*words.length)];
+    w.style.color=Math.random()<.5?'#16432E':'#A88543';
+    w.style.left='60%';w.style.top='22%';
+    btn.appendChild(w);
+    const dx=Math.round(Math.random()*90-25),dy=Math.round(80+Math.random()*50),r0=Math.round(Math.random()*16-8),r1=Math.round(Math.random()*30-15);
+    const anim=still?w.animate([{opacity:0},{opacity:1,offset:.2},{opacity:0}],{duration:1200}):
+      w.animate([{transform:`translate(-50%,0) scale(.5) rotate(${r0}deg)`,opacity:0},{transform:`translate(calc(-50% + ${dx*.25}px),-${dy*.3}px) scale(1.1) rotate(${r0}deg)`,opacity:1,offset:.2},{transform:`translate(calc(-50% + ${dx}px),-${dy}px) scale(1.3) rotate(${r1}deg)`,opacity:0}],{duration:1500,easing:'cubic-bezier(.2,.6,.3,1)'});
+    anim.onfinish=()=>w.remove();
+    if(!still)img.animate([{transform:'none'},{transform:'translateY(-6px) rotate(-1.5deg)',offset:.35},{transform:'none'}],{duration:420,easing:'ease-out'});
+  });
+})();
+
+/* the ex libris leans gently towards the pointer */
+(()=>{
+  const wrap=$('#bp-wrap'),card=$('#bookplate');
+  const fine=matchMedia('(hover: hover) and (pointer: fine)'),calm=matchMedia('(prefers-reduced-motion: reduce)');
+  let tx=0,ty=0,ts=1,cx=0,cy=0,cs=1,raf=0;
+  const step=()=>{
+    cx+=(tx-cx)*.09;cy+=(ty-cy)*.09;cs+=(ts-cs)*.09;
+    card.style.transform=`rotateX(${(-cy*6).toFixed(2)}deg) rotateY(${(cx*8).toFixed(2)}deg) scale(${cs.toFixed(4)})`;
+    card.style.boxShadow=`${(-cx*16).toFixed(1)}px ${(26+cy*12).toFixed(1)}px 46px -24px rgba(0,0,0,.6)`;
+    if(Math.abs(tx-cx)+Math.abs(ty-cy)+Math.abs(ts-cs)>.002){raf=requestAnimationFrame(step)}
+    else{raf=0;if(ts===1&&!tx&&!ty){card.style.transform='';card.style.boxShadow=''}}
+  };
+  const run=()=>{if(!raf)raf=requestAnimationFrame(step)};
+  wrap.addEventListener('pointermove',e=>{
+    if(!fine.matches||calm.matches)return;
+    const r=card.getBoundingClientRect(),x=Math.min(1,Math.max(0,(e.clientX-r.left)/r.width)),y=Math.min(1,Math.max(0,(e.clientY-r.top)/r.height));
+    tx=(x-.5)*2;ty=(y-.5)*2;ts=1.015;
+    card.style.setProperty('--mx',(x*100).toFixed(1)+'%');card.style.setProperty('--my',(y*100).toFixed(1)+'%');
+    card.classList.add('lit');run();
+  });
+  wrap.addEventListener('pointerleave',()=>{tx=0;ty=0;ts=1;card.classList.remove('lit');run()});
+})();
+
+/* reveal + animate bars */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');
+  e.target.querySelectorAll('.f').forEach(f=>f.style.width=f.dataset.w+'%');
+  e.target.querySelectorAll('.b').forEach(b=>b.style.height=b.dataset.h+'%');
+  io.unobserve(e.target)}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* theme toggle */
+function setIcon(){$('#theme').textContent=isDark()?'☀':'☾'}
+try{const t=localStorage.getItem('lud-theme');if(t)root.dataset.theme=t}catch(e){}
+setIcon();paintFrames();
+$('#theme').addEventListener('click',()=>{root.dataset.theme=isDark()?'light':'dark';try{localStorage.setItem('lud-theme',root.dataset.theme)}catch(e){}setIcon();paintFrames();inkify()});
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{setIcon();paintFrames();inkify()});
+
+/* chapter 9: every book club book, on a shelf */
+const BC=[
+ [1,'2023-04-27',,'Bunny',,'Mona Awad','f','“Just a warning: it is bonkers. Come prepared.”'],
+ [2,'2023-06-01',,'The Bell Jar',,'Sylvia Plath','f','“Ready to feel depressed and have an existential crisis? (I am only half kidding.)”'],
+ [3,'2023-07-13',,'My Body',,'Emily Ratajkowski','n','Fame, fashion and the female body, with Rebecca Solnit as optional homework.'],
+ [4,'2023-10-11',,'Lily: A Tale of Revenge','Lily','Rose Tremain','f','Historical fiction, because readers asked for it. Being an orphan in Victorian London is “no picnic”.'],
+ [5,'2023-11-29',,'Julia',,'Sandra Newman','f','1984, retold from Julia’s side. “Big Brother Is Watching You!”'],
+ [6,'2024-01-25',,'The Wager',,'David Grann','n','Shipwreck and mutiny, during a war literally called the War of Jenkins’ Ear.'],
+ [7,'2024-02-29',,'The Secret History',,'Donna Tartt','f','Dark Academia, by request, “while I’m still not sure what that exactly is”.'],
+ [8,'2024-03-29',,'Bride',,'Ali Hazelwood','f','“Okay, you win; we’re doing this.” Romantasy, by popular demand.'],
+ [9,'2024-04-26',,'The Great Gatsby',,'F. Scott Fitzgerald','f','“Not that the werewolf sex wasn’t great…” Back to a classic, with a free glass of sparkling wine.'],
+ [10,'2024-06-27','2024-06-28','Babel',,'R. F. Kuang','f','Magic silver and the power of translation. So popular it got a second night.'],
+ [11,'2024-07-25',,'The Word for World Is Forest','Word for World Is Forest','Ursula K. Le Guin','f','A forested planet, drained by humans whose own Earth has no trees left.'],
+ [12,'2024-08-29',,'I’ll Be Gone in the Dark',,'Michelle McNamara','n','An amateur sleuth’s hunt for the Golden State Killer.'],
+ [13,'2024-09-26',,'Held',,'Anne Michaels','f','Booker-longlisted, “as dreamy and atmospheric as it is poignant and eloquent”.'],
+ [14,'2024-10-30',,'Lud-in-the-Mist',,'Hope Mirrlees','f','An invitation to seek “the revel under the hill”, and wander into Faerie.'],
+ [15,'2024-11-28',,'The Penguin Book of Christmas Stories','Christmas Stories','edited by Jessica Harrison','p','Christmas stories from around the world, from frozen Nordic woods to glittering Paris.'],
+ [16,'2025-01-09',,'Super-Infinite',,'Katherine Rundell','n','John Donne, “the most famous poet that you didn’t know you knew”.'],
+ [17,'2025-02-27',,'Fangirl',,'Rainbow Rowell','f','“Put your AO3 aside for one evening and come discuss being a fangirl!”'],
+ [18,'2025-03-27',,'Orbital',,'Samantha Harvey','f','The Booker winner “that people either love or love to hate”.'],
+ [19,'2025-04-24',,'Everything I Learned, I Learned in a Chinese Restaurant','Everything I Learned','Curtis Chin','n','Growing up in Detroit in the family restaurant. Curtis Chin came to Luddites himself in May.'],
+ [20,'2025-06-19',,'Mrs Dalloway',,'Virginia Woolf','f','“Who’s afraid of Virginia Woolf? Not us!” Followed the next night by a candlelit reading.'],
+ [21,'2025-07-24',,'The Southern Book Club’s Guide to Slaying Vampires','Slaying Vampires','Grady Hendrix','f','A novel about a book club that may or may not have been infiltrated by a vampire.'],
+ [22,'2025-09-04',,'Want',,'Gillian Anderson','n','Anonymous accounts of desire, collected by Gillian Anderson.'],
+ [23,'2025-10-16',,'The Haunting of Hill House','Hill House','Shirley Jackson','f','“Sounds cosy enough, we’re in.”'],
+ [24,'2025-11-13',,'The Hitchhiker’s Guide to the Galaxy','The Hitchhiker’s Guide','Douglas Adams','f','Don’t panic, and grab your towel.'],
+ [25,'2025-12-11',,'The Hobbit',,'J. R. R. Tolkien','f','Tickets “do not require that you sign a Deed of Contract”.'],
+ [26,'2026-01-22',,'This Way Up',,'Jay Foreman & Mark Cooper-Jones','n','The Map Men on some of the worst maps in history.'],
+ [27,'2026-02-19',,'Hedda Gabler',,'Henrik Ibsen','v','Mrs. Hot Shot herself: a general’s daughter with a penchant for chaos and guns.'],
+ [28,'2026-03-19',,'Frankenstein',,'Mary Shelley','f','Mary Shelley’s “sci-fi genesis”.'],
+ [29,'2026-04-17',,'Death of a Naturalist',,'Seamus Heaney','v','Bogs and blackberries, and, this being Irish literature, “sadness and untimely deaths”.'],
+ [30,'2026-05-28',,'London Falling',,'Patrick Radden Keefe','n','“Wannabe Billionaires, Petulant Gangsters, & Incompetent Police.”'],
+ [31,'2026-06-25',,'The Catcher in the Rye','The Catcher in the Rye','J. D. Salinger','f','“Put on an ugly hunting hat”: an evening with the poster boy for teenage angst.'],
+ [32,'2026-07-30',,'Persepolis',,'Marjane Satrapi','p','Chosen in honour of Marjane Satrapi, after her death that June.'],
+ [33,'2026-08-20','2026-08-21','There Is No Antimemetics Division','Antimemetics Division','qntm','f','Ideas that eat your memory. Held over two nights, due to demand.'],
+ [34,'2026-09-24','2026-09-25','The Odyssey',,'Homer','v','Choose your translator: Wilson, Fagles, Lattimore or Mendelsohn.'],
+ [35,'2026-10-22','2026-10-23','Piranesi',,'Susanna Clarke','f','A labyrinth created by Susanna Clarke “rather than Daedalus”.'],
+ [36,'2026-12-03','2026-12-04','The Zorg',,'Siddharth Kara','n','A true story of greed and murder that inspired the abolition of slavery.']
+].map(([n,d1,d2,t,s,a,k,l])=>({n,d1,d2,t,s:s||t,a,k,l}));
+const KIND={f:{lab:'Novels',one:'Novel',c:['#16432E','#22583F','#1D4B36'],tx:'#EFE6D0',bd:'#C9A865'},
+            n:{lab:'Non-fiction',one:'Non-fiction',c:['#B8914F','#A88543'],tx:'#10271B',bd:'#16432E'},
+            v:{lab:'Poetry, plays & epics',one:'Poetry, play or epic',c:['#6E2A34'],tx:'#F1E4C8',bd:'#D2B373'},
+            p:{lab:'Stories & graphic novels',one:'Stories or graphic novel',c:['#E9DFC6'],tx:'#16432E',bd:'#16432E'}};
+const NEXT=36;
+const day=d=>{const x=new Date(d+'T12:00:00');return {w:x.toLocaleDateString('en-GB',{weekday:'long'}),d:x.getDate(),m:x.toLocaleDateString('en-GB',{month:'long'}),y:x.getFullYear()}};
+function bcDate(b){
+  const a=day(b.d1);if(!b.d2)return `${a.w} ${a.d} ${a.m} ${a.y}`;
+  const z=day(b.d2);return `${a.w} ${a.d} & ${z.w} ${z.d} ${z.m} ${z.y}`;
+}
+(()=>{
+  const years=[...new Set(BC.map(b=>b.d1.slice(0,4)))];
+  const seen={};
+  $('#shelves').innerHTML=years.map(y=>`<div class="shelf"><div class="yr">${y}</div><div><ul class="books">${BC.filter(b=>b.d1.startsWith(y)).map(b=>{
+    const K=KIND[b.k];seen[b.k]=(seen[b.k]||0)+1;
+    const w=Math.round(Math.max(38,Math.min(60,32+b.s.length*1.1)));
+    const h=Math.max(182+((b.n*37+b.t.length*11)%44),Math.round(b.s.length*6.7+66));
+    return `<li><button class="spine k-${b.k}" data-n="${b.n}" style="--w:${w}px;--h:${h}px;--c:${K.c[(seen[b.k]-1)%K.c.length]};--tx:${K.tx};--bd:${K.bd}" aria-label="No. ${b.n}: ${b.t}, ${b.a.startsWith('edited')?b.a:'by '+b.a}"><span class="st">${b.s}</span><span class="sn">${b.n}</span>${b.n===NEXT?'<span class="rib" aria-hidden="true"></span>':''}</button></li>`}).join('')}</ul><div class="plank"></div></div></div>`).join('');
+  $('#bc-legend').innerHTML=Object.entries(KIND).map(([k,K])=>`<span><i style="background:${K.c[0]}"></i>${K.lab} · ${BC.filter(b=>b.k===k).length}</span>`).join('');
+  const spines=[...document.querySelectorAll('.spine')];
+  let cur=0;
+  function show(n,animate){
+    if(n===cur)return;cur=n;const b=BC[n-1],K=KIND[b.k];
+    spines.forEach(s=>s.classList.toggle('sel',+s.dataset.n===n));
+    const fill=()=>{
+      $('#cc-no').textContent='Book Club No. '+b.n;
+      $('#cc-date').textContent=bcDate(b);
+      $('#cc-t').textContent=b.t;
+      $('#cc-a').textContent=b.a.startsWith('edited')?b.a:'by '+b.a;
+      $('#cc-k').innerHTML=`<i style="background:${K.c[0]}"></i>${K.one}`;
+      $('#cc-l').textContent=b.l;
+      $('#cc-stamp').hidden=b.n!==NEXT;
+    };
+    const body=$('#cc-body');
+    if(animate&&body.animate&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+      body.getAnimations().forEach(a=>a.cancel());
+      body.animate([{opacity:1,transform:'none'},{opacity:0,transform:'translateY(-4px)'}],{duration:110,easing:'ease-in'}).onfinish=()=>{fill();body.animate([{opacity:0,transform:'translateY(6px)'},{opacity:1,transform:'none'}],{duration:260,easing:'cubic-bezier(.2,.7,.2,1)'})};
+    }else fill();
+  }
+  const fine=matchMedia('(hover: hover) and (pointer: fine)');
+  spines.forEach(s=>{
+    const n=+s.dataset.n;
+    s.addEventListener('click',()=>show(n,true));
+    s.addEventListener('focus',()=>show(n,true));
+    s.addEventListener('mouseenter',()=>{if(fine.matches)show(n,true)});
+  });
+  show(NEXT,false);
+  /* start each shelf scrolled to its end on small screens, so the newest books show first */
+  document.querySelectorAll('.books').forEach(ul=>{if(ul.scrollWidth>ul.clientWidth&&ul.querySelector('.rib'))ul.scrollLeft=ul.scrollWidth});
+})();
+
+/* bookmarks: contents page, ribbon bookmarks, hanging ribbon and contents sheet */
+const CH=[
+ {id:'verdict',n:'1',t:'Reader, They Loved It',k:'4.9 ★'},
+ {id:'talk',n:'2',t:'What They Talk About When They Talk About Luddites',k:'179 × wine'},
+ {id:'house',n:'3',t:'The House on Hopland',k:'three floors'},
+ {id:'quotes',n:'4',t:'A Commonplace Book',k:Q.length+' lines'},
+ {id:'interlude',n:'❦',t:'A Bookmark from the Stacks',k:'an interlude',lab:'Interlude'},
+ {id:'editions',n:'5',t:'Bound in Green and Brass',k:'two reprints'},
+ {id:'menu',n:'6',t:'A Moveable Feast',k:'by the glass'},
+ {id:'marginalia',n:'7',t:'Marginalia',k:'in pencil'},
+ {id:'beyond',n:'8',t:'Our Mutual Friends',k:'15.4k followers'},
+ {id:'bookclub',n:'9',t:'If on a Thursday Night a Reader',k:'36 books'},
+ {id:'story',n:'10',t:'Remembrance of Things Past',k:'since 2020'},
+ {id:'epilogue',n:'Ep.',t:'A Letter',k:'for you',lab:'Epilogue'}
+];
+const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)');
+const tocHTML=()=>CH.map(c=>`<li><a href="#${c.id}" data-id="${c.id}"><span class="tn">${c.n}</span><span class="tt">${c.t}</span><span class="td" aria-hidden="true"></span><span class="tk">${c.k}</span></a></li>`).join('');
+$('#toc-page').innerHTML=tocHTML();
+$('#toc-sheet').innerHTML=tocHTML();
+/* once the web fonts have arrived, lay the contents out again with the real letterforms */
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{document.querySelectorAll('.toc').forEach(ol=>{ol.style.display='none';void ol.offsetHeight;ol.style.display=''})});
+$('#ribbons').innerHTML=`<li><button class="rb" id="rb-contents" aria-haspopup="dialog"><span class="rn"><svg viewBox="0 0 1200 1200" aria-hidden="true"><use href="#mark-sm"/></svg></span><span class="rt">Contents</span></button></li>`+
+  CH.map(c=>`<li><a class="rb" href="#${c.id}" data-id="${c.id}" aria-label="${c.lab||'Chapter '+c.n}: ${c.t}"><span class="rn" aria-hidden="true">${c.n==='Ep.'?'E':c.n}</span><span class="rt" aria-hidden="true">${c.t}</span></a></li>`).join('');
+
+const sheet=$('#sheet'),mrib=$('#mribbon'),prog=$('#progress'),ribs=$('#ribbons');
+function goTo(id){
+  const el=document.getElementById(id);if(!el)return;
+  const from=scrollY;el.scrollIntoView({behavior:reduceMotion.matches?'instant':'smooth',block:'start'});
+  /* if smooth scrolling is unavailable, turn straight to the page */
+  setTimeout(()=>{if(Math.abs(scrollY-from)<2&&Math.abs(el.getBoundingClientRect().top)>12)el.scrollIntoView({behavior:'instant',block:'start'})},450);
+  try{history.replaceState(null,'','#'+id)}catch(e){}
+}
+function openSheet(){
+  if(typeof sheet.showModal!=='function'){goTo('contents');return}
+  sheet.showModal();root.style.overflow='hidden';
+  const a=sheet.querySelector('a[aria-current="true"]')||sheet.querySelector('a');a&&a.focus({preventScroll:true});
+}
+sheet.addEventListener('close',()=>{root.style.overflow=''});
+sheet.addEventListener('click',e=>{if(e.target===sheet)sheet.close()});
+$('#sheet-x').addEventListener('click',()=>sheet.close());
+$('#toc-sheet').addEventListener('click',e=>{const a=e.target.closest('a');if(!a)return;e.preventDefault();root.style.overflow='';sheet.close();setTimeout(()=>goTo(a.dataset.id),40)});
+mrib.addEventListener('click',openSheet);
+$('#rb-contents').addEventListener('click',openSheet);
+
+/* follow along: which chapter is open, how far through the book */
+const secs=CH.map(c=>document.getElementById(c.id));
+let cur=-2;
+function spy(){
+  const line=innerHeight*.38;let a=-1;
+  secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<=line)a=i});
+  const past=$('#top').getBoundingClientRect().bottom<40;
+  ribs.classList.toggle('show',past);mrib.classList.toggle('show',past);
+  const max=document.documentElement.scrollHeight-innerHeight;
+  prog.style.transform=`scaleX(${max>0?Math.min(1,scrollY/max):0})`;
+  if(a===cur)return;cur=a;
+  document.querySelectorAll('[data-id]').forEach(el=>{if(el.dataset.id===(CH[a]&&CH[a].id))el.setAttribute('aria-current','true');else el.removeAttribute('aria-current')});
+  const c=CH[a];
+  $('#mr-k').textContent=c?(c.lab||'Chapter'):'Contents';
+  $('#mr-n').textContent=c?(c.n==='Ep.'?'❧':c.n):'❧';
+  mrib.setAttribute('aria-label',c?`${c.lab||'Chapter '+c.n}: ${c.t}. Open the contents`:'Open the contents');
+  if(mrib.classList.contains('show')&&!reduceMotion.matches){mrib.classList.remove('tug');void mrib.offsetWidth;mrib.classList.add('tug')}
+}
+addEventListener('scroll',spy,{passive:true});addEventListener('resize',spy);
+spy();
+</script>
+</body>
+</html>
